@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo: Radio, Drop Down, Text Area, Frame (Tanpa CSS)</title>
+</head>
+<body>
+  <h1>Demo HTML (tanpa CSS)</h1>
+
+  <h2>1) Form — Radio Button, Drop Down, Text Area</h2>
+  <form onsubmit="event.preventDefault(); alert('Form terkirim!');">
+    <fieldset>
+      <legend>Jenis Kelamin (Radio)</legend>
+      <label><input type="radio" name="jk" value="L" required> Laki-laki</label><br>
+      <label><input type="radio" name="jk" value="P"> Perempuan</label>
+    </fieldset>
+
+    <p>
+      <label for="jurusan">Jurusan (Drop Down):</label><br>
+      <select id="jurusan" name="jurusan" required>
+        <option value="">-- Pilih --</option>
+        <option>Teknik Komputer</option>
+        <option>Sistem Informasi</option>
+        <option>Informatika</option>
+        <option>Teknik Elektro</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="catatan">Catatan (Text Area):</label><br>
+      <textarea id="catatan" name="catatan" rows="6" cols="50" placeholder="Tulis komentar atau catatan di sini..."></textarea>
+    </p>
+
+    <p>
+      <button type="submit">Kirim</button>
+    </p>
+  </form>
+
+  <hr>
+
+  <h2>2) Frame Horisontal (atas & bawah)</h2>
+  <p>Di bawah ini menggunakan dua &lt;iframe&gt; berukuran tetap.</p>
+  <iframe srcdoc="<p>Frame Atas</p>" title="Frame Atas" width="100%" height="120"></iframe>
+  <iframe srcdoc="<p>Frame Bawah</p>" title="Frame Bawah" width="100%" height="120"></iframe>
+
+  <hr>
+
+  <h2>3) Frame Vertikal (kiri & kanan)</h2>
+  <table border="0" width="100%">
+    <tr>
+      <td width="50%"><iframe srcdoc="<p>Frame Kiri</p>" title="Frame Kiri" width="100%" height="160"></iframe></td>
+      <td width="50%"><iframe srcdoc="<p>Frame Kanan</p>" title="Frame Kanan" width="100%" height="160"></iframe></td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h2>4) Frame Gabungan (atas penuh + bawah terbagi 2)</h2>
+  <iframe srcdoc="<p>Atas Penuh</p>" title="Atas Penuh" width="100%" height="100"></iframe>
+  <table border="0" width="100%">
+    <tr>
+      <td width="50%"><iframe srcdoc="<p>Bawah Kiri</p>" title="Bawah Kiri" width="100%" height="140"></iframe></td>
+      <td width="50%"><iframe srcdoc="<p>Bawah Kanan</p>" title="Bawah Kanan" width="100%" height="140"></iframe></td>
+    </tr>
+  </table>
+
+  <hr>
+
+</body>
+</html>

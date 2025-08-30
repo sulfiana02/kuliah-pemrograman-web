@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh Rowspan dan Colspan</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        td {
+            border: 2px solid #333;
+            padding: 30px;
+            text-align: center;
+        }
+        .colspan {
+            background-color: #a8e6cf; /* hijau muda */
+        }
+        .rowspan {
+            background-color: #d291bc; /* ungu muda */
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td></td>
+            <td colspan="2" class="colspan">colspan = "2"</td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="rowspan">rowspan = "2"</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
