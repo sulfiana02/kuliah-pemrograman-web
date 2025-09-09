@@ -33,12 +33,41 @@
       line-height: 1.6;
     }
 
+    /* Header dengan tombol login */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: flex-end;
+      z-index: 1000;
+    }
+    
+    .login-btn, .logout-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .login-btn:hover, .logout-btn:hover {
+      background: var(--dark-color);
+      transform: translateY(-3px);
+    }
+
     .container {
       display: flex;
       flex-direction: row;
       width: 90%;
       max-width: 1200px;
-      margin: 40px auto;
+      margin: 60px auto 40px;
       min-height: 90vh;
       box-shadow: var(--shadow);
       border-radius: 15px;
@@ -272,12 +301,214 @@
       margin-bottom: 5px;
     }
 
+    /* Modal Login */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .modal.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .modal-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: var(--shadow);
+      transform: translateY(-50px);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    
+    .modal.active .modal-content {
+      transform: translateY(0);
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--light-text);
+      transition: var(--transition);
+    }
+    
+    .close-btn:hover {
+      color: var(--primary-color);
+    }
+    
+    .modal h2 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: var(--dark-color);
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    .form-group input:focus {
+      border-color: var(--primary-color);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(214, 51, 132, 0.2);
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(214, 51, 132, 0.3);
+    }
+    
+    .form-footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+    
+    .form-footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .form-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Social Login Buttons */
+    .social-login {
+      margin-top: 20px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+    
+    .social-login p {
+      text-align: center;
+      margin-bottom: 15px;
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+    
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1.2rem;
+      color: white;
+    }
+    
+    .social-btn:hover {
+      transform: translateY(-3px);
+    }
+    
+    .google-btn {
+      background: #DB4437;
+    }
+    
+    .facebook-btn {
+      background: #4267B2;
+    }
+    
+    .linkedin-btn {
+      background: #0077B5;
+    }
+
+    /* Overlay untuk mencegah akses sebelum login */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1500;
+      color: white;
+      text-align: center;
+    }
+    
+    .overlay-content {
+      max-width: 500px;
+      padding: 30px;
+    }
+    
+    .overlay-content h2 {
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .overlay-content p {
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
     /* Responsif HP */
     @media (max-width: 992px) {
       .container {
         flex-direction: column;
         width: 95%;
-        margin: 20px auto;
+        margin: 60px auto 20px;
+      }
+      
+      .header {
+        padding: 15px 20px;
       }
       
       .left, .right {
@@ -340,10 +571,68 @@
       color: var(--primary-color);
       transform: translateY(-3px);
     }
+
+    /* Hidden class untuk menyembunyikan elemen */
+    .hidden {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <!-- Overlay untuk mencegah akses sebelum login -->
+  <div class="overlay" id="loginOverlay">
+    <div class="overlay-content">
+      <h2>Selamat Datang di CV Sulfiana</h2>
+      <p>Silakan login terlebih dahulu untuk melihat informasi lengkap</p>
+      <button class="login-btn" id="overlayLoginButton"><i class="fas fa-sign-in-alt"></i> Login Sekarang</button>
+    </div>
+  </div>
+
+  <!-- Header dengan tombol login/logout -->
+  <div class="header">
+    <button class="logout-btn hidden" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    <button class="login-btn" id="loginButton"><i class="fas fa-sign-in-alt"></i> Login</button>
+  </div>
+
+  <!-- Modal Login -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Login ke CV Sulfiana</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Masukkan username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Masukkan password" required>
+        </div>
+        <button type="submit" class="submit-btn">Login</button>
+        
+        <div class="social-login">
+          <p>Atau login dengan</p>
+          <div class="social-buttons">
+            <button type="button" class="social-btn google-btn" id="googleLogin">
+              <i class="fab fa-google"></i>
+            </button>
+            <button type="button" class="social-btn facebook-btn" id="facebookLogin">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+            <button type="button" class="social-btn linkedin-btn" id="linkedinLogin">
+              <i class="fab fa-linkedin-in"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="form-footer">
+          <p>Belum punya akun? <a href="#" id="registerLink">Daftar di sini</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container" id="cvContainer">
     <!-- Kolom Kiri -->
     <div class="left">
       <img src="foto.jpg" alt="Foto Sulfiana">
@@ -463,24 +752,138 @@
   </div>
 
   <script>
-    // Script untuk animasi scroll
+    // Script untuk mengelola autentikasi
     document.addEventListener('DOMContentLoaded', function() {
+      // Elemen UI
+      const loginButton = document.getElementById('loginButton');
+      const logoutButton = document.getElementById('logoutButton');
+      const overlayLoginButton = document.getElementById('overlayLoginButton');
+      const loginModal = document.getElementById('loginModal');
+      const closeModal = document.getElementById('closeModal');
+      const loginForm = document.getElementById('loginForm');
+      const registerLink = document.getElementById('registerLink');
+      const loginOverlay = document.getElementById('loginOverlay');
+      const cvContainer = document.getElementById('cvContainer');
+      const googleLogin = document.getElementById('googleLogin');
+      const facebookLogin = document.getElementById('facebookLogin');
+      const linkedinLogin = document.getElementById('linkedinLogin');
+      
+      // Status login
+      let isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+      
+      // Fungsi untuk memeriksa status login
+      function checkLoginStatus() {
+        if (isLoggedIn) {
+          // Jika sudah login, sembunyikan overlay dan tampilkan CV
+          loginOverlay.classList.add('hidden');
+          cvContainer.classList.remove('hidden');
+          loginButton.classList.add('hidden');
+          logoutButton.classList.remove('hidden');
+        } else {
+          // Jika belum login, tampilkan overlay dan sembunyikan CV
+          loginOverlay.classList.remove('hidden');
+          cvContainer.classList.add('hidden');
+          loginButton.classList.remove('hidden');
+          logoutButton.classList.add('hidden');
+        }
+      }
+      
+      // Fungsi untuk login
+      function login() {
+        isLoggedIn = true;
+        sessionStorage.setItem('isLoggedIn', 'true');
+        checkLoginStatus();
+        loginModal.classList.remove('active');
+      }
+      
+      // Fungsi untuk logout
+      function logout() {
+        isLoggedIn = false;
+        sessionStorage.removeItem('isLoggedIn');
+        checkLoginStatus();
+      }
+      
+      // Event listener untuk tombol login di overlay
+      overlayLoginButton.addEventListener('click', function() {
+        loginModal.classList.add('active');
+      });
+      
+      // Event listener untuk tombol login di header
+      loginButton.addEventListener('click', function() {
+        loginModal.classList.add('active');
+      });
+      
+      // Event listener untuk tombol logout
+      logoutButton.addEventListener('click', logout);
+      
+      // Tutup modal saat tombol close diklik
+      closeModal.addEventListener('click', function() {
+        loginModal.classList.remove('active');
+      });
+      
+      // Tutup modal saat area di luar modal diklik
+      window.addEventListener('click', function(event) {
+        if (event.target === loginModal) {
+          loginModal.classList.remove('active');
+        }
+      });
+      
+      // Proses form login
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        // Validasi sederhana (bisa diganti dengan validasi yang lebih kompleks)
+        if (username && password) {
+          login();
+          alert(`Login berhasil! Selamat datang ${username}`);
+        } else {
+          alert('Silakan isi username dan password dengan benar');
+        }
+      });
+      
+      // Login dengan Google
+      googleLogin.addEventListener('click', function() {
+        alert('Login dengan Google dipilih. (Dalam implementasi nyata, ini akan mengarahkan ke OAuth Google)');
+        login();
+      });
+      
+      // Login dengan Facebook
+      facebookLogin.addEventListener('click', function() {
+        alert('Login dengan Facebook dipilih. (Dalam implementasi nyata, ini akan mengarahkan ke OAuth Facebook)');
+        login();
+      });
+      
+      // Login dengan LinkedIn
+      linkedinLogin.addEventListener('click', function() {
+        alert('Login dengan LinkedIn dipilih. (Dalam implementasi nyata, ini akan mengarahkan ke OAuth LinkedIn)');
+        login();
+      });
+      
+      // Link register
+      registerLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Fitur pendaftaran masih dalam tahap pengembangan');
+      });
+      
+      // Animasi scroll
       const animateItems = document.querySelectorAll('.animate-item');
       
-      // Fungsi untuk memeriksa apakah elemen berada dalam viewport
       function checkScroll() {
         animateItems.forEach(item => {
           const position = item.getBoundingClientRect();
           
-          // Jika elemen berada dalam viewport
           if(position.top < window.innerHeight - 50) {
             item.style.opacity = 1;
           }
         });
       }
       
-      // Panggil fungsi saat scroll dan saat load pertama
       window.addEventListener('scroll', checkScroll);
+      
+      // Periksa status login saat halaman dimuat
+      checkLoginStatus();
       checkScroll();
     });
   </script>
