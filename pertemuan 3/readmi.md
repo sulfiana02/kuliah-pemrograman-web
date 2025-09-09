@@ -73,7 +73,7 @@ Overlay yang menutupi layar saat pertama kali dibuka. User harus klik tombol log
 </div>
 ```
 
-👉 Kotak popup untuk login dengan input username & password.
+Kotak popup untuk login dengan input username & password.
 
 # 7. Container CV
 ```html 
