@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Kalkulator Sederhana</title>
+</head>
+<body>
+  <input type="text" id="num1" placeholder="Angka 1">
+  <input type="text" id="num2" placeholder="Angka 2"><br>
+  <button onclick="tambah()">+</button>
+  <button onclick="kurang()">-</button>
+  <button onclick="kali()">*</button>
+  <button onclick="bagi()">/</button>
+  <p>Hasil: <span id="hasil"></span></p>
+
+  <script>
+    function getInput() {
+      let a = Number(document.getElementById("num1").value);
+      let b = Number(document.getElementById("num2").value);
+      return [a, b];
+    }
+
+    function tambah() {
+      let [a, b] = getInput();
+      document.getElementById("hasil").innerText = a + b;
+    }
+    function kurang() {
+      let [a, b] = getInput();
+      document.getElementById("hasil").innerText = a - b;
+    }
+    function kali() {
+      let [a, b] = getInput();
+      document.getElementById("hasil").innerText = a * b;
+    }
+    function bagi() {
+      let [a, b] = getInput();
+      document.getElementById("hasil").innerText = b !== 0 ? a / b : "Tidak bisa dibagi 0";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Contoh Array</title>
+</head>
+<body>
+  <script>
+    var buah = ["Apel", "Jeruk", "Mangga"];
+    document.write("Isi array awal: " + buah.join(", ") + "<br>");
+    buah.push("Pisang");
+    document.write("Setelah ditambah Pisang: " + buah.join(", ") + "<br>");
+    document.write("Buah pertama: " + buah[0] + "<br>");
+    document.write("Buah terakhir: " + buah[buah.length - 1] + "<br>");
+    buah[1] = "Semangka";
+    document.write("Setelah diganti: " + buah.join(", ") + "<br>");
+  </script>
+</body>
+</html>
