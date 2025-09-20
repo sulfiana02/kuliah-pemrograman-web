@@ -1,6 +1,7 @@
 # Percobaan 1
 
 <img src = "image\percobaan1.png">
+
 Kode HTML tersebut membuat halaman dengan judul “contoh JavaScript”. Di bagian <head> ada script yang menuliskan teks “Program JavaSript Aku di kepala”, lalu di bagian <body> ada script kedua yang menuliskan “Program JavaSript Aku di body”. Karena tidak ada pemisah baris, keduanya ditampilkan berdempetan di layar menjadi:
 
 Program JavaSript Aku di kepalaProgram JavaSript Aku di body
@@ -43,8 +44,8 @@ menampilkan hasil di halaman.Jadi keseluruhan kode ini adalah contoh sederhana i
 # Percobaan 5
 
 <img src = "image\percobaan5.png">
-Kode HTML ini membuat halaman yang langsung memunculkan alert box ketika dibuka.
 
+Kode HTML ini membuat halaman yang langsung memunculkan alert box ketika dibuka.
 Di dalam tag <script>, ada perintah 
 ```html
 window.alert("Apakah anda akan meninggalkan laman ini?");
@@ -59,8 +60,8 @@ Pengguna harus menekan tombol OK pada alert untuk bisa melanjutkan melihat halam
 # Percobaan 6
 <img src = "image\percobaan6a.png">
 <img src = "image\percobaan6b.png">
-Kode HTML ini menampilkan kotak konfirmasi (confirm box) saat halaman dibuka.
 
+Kode HTML ini menampilkan kotak konfirmasi (confirm box) saat halaman dibuka.
 Script di dalam <body> menjalankan 
 ```html 
 window.confirm("Apakah anda sudah yakin ?");
@@ -74,10 +75,11 @@ Perintah
 document.write("Jawaban Anda: " + jawaban); 
 ```
 menampilkan hasil ke halaman
+
 # Percobaan 7
 <img src = "image\percobaan7.png">
-Kode JavaScript ini sangat sederhana, fungsinya untuk mendemonstrasikan deklarasi variabel dan operasi aritmatika.
 
+Kode JavaScript ini sangat sederhana, fungsinya untuk mendemonstrasikan deklarasi variabel dan operasi aritmatika.
 var VariabelKu; → mendeklarasikan variabel kosong.
 
 var VariabelKu2 = 3; → mendeklarasikan variabel dengan nilai awal 3.
@@ -87,9 +89,10 @@ VariabelKu = 1234; → memberi nilai 1234 ke variabel pertama.
 document.write(VariabelKu * VariabelKu2); → menghitung perkalian 1234 * 3 dan menuliskan hasilnya ke halaman.
 
 # Percobaan 8
-<img src = "image\percobaan8.png">
-Kode JavaScript ini mendemonstrasikan penggunaan fungsi dengan parameter, operasi aritmatika, dan output ke halaman.
 
+<img src = "image\percobaan8.png">
+
+Kode JavaScript ini mendemonstrasikan penggunaan fungsi dengan parameter, operasi aritmatika, dan output ke halaman.
 var a = 12; var b = 4; → mendefinisikan dua variabel awal.
 
 function Perkalian_Dengan2(b) → membuat fungsi yang menerima sebuah angka (b) lalu mengalikannya dengan 2. Nilai hasil perkalian disimpan ke variabel a dan dikembalikan dengan return.
@@ -106,8 +109,8 @@ document.write("Nilai dari a adalah ", a);
 
 # Percobaan 9
 <img src = "image\percobaan9.png">
-Kode ini menunjukkan fungsi dengan parameter dan perbedaan penggunaan variabel lokal serta global di JavaScript.
 
+Kode ini menunjukkan fungsi dengan parameter dan perbedaan penggunaan variabel lokal serta global di JavaScript.
 var a = 12; var b = 4; → mendefinisikan variabel global a bernilai 12 dan b bernilai 4.
 
 Fungsi PerkalianDengan2(b) membuat variabel lokal a yang nilainya b * 2. Karena var digunakan, variabel ini hanya berlaku di dalam fungsi dan tidak mengubah a global. Fungsi kemudian mengembalikan nilai lokal a.
@@ -121,9 +124,10 @@ document.write("Nilai dari a adalah", a);
 → menampilkan nilai variabel a global, yaitu tetap 12 karena tidak terpengaruh oleh a lokal di dalam fungsi.
 
 # Percobaan 10
-<img src = "image\percobaan10.png">
-Kode HTML + JavaScript ini berfungsi untuk mendemonstrasikan konversi string menjadi angka dengan fungsi parseInt() dan parseFloat().
 
+<img src = "image\percobaan10.png">
+
+Kode HTML + JavaScript ini berfungsi untuk mendemonstrasikan konversi string menjadi angka dengan fungsi parseInt() dan parseFloat().
 Script di dalam <body> berisi percobaan parsing string:
 
 parseInt("27") → menghasilkan 27.
@@ -144,8 +148,8 @@ parseFloat("A27.5") → menghasilkan NaN (karena diawali huruf).
 
 # Percobaan 11
 <img src = "image\percobaan11.png">
-Kode HTML + JavaScript ini digunakan untuk menampilkan hasil operasi matematika sederhana langsung di halaman web.
 
+Kode HTML + JavaScript ini digunakan untuk menampilkan hasil operasi matematika sederhana langsung di halaman web.
 Script berisi beberapa perintah document.write() yang menuliskan hasil perhitungan.
 
 Tapi ada sedikit kesalahan pada teks keterangan dan ekspresi hitungan:
@@ -162,8 +166,8 @@ adi intinya, kode ini mendemonstrasikan operasi aritmatika (+, -, *, /), tetapi 
 # Percobaan 12
 <img src = "image\percobaan12a.png">
 <img src = "image\percobaan12b.png">
-Kode HTML + JavaScript ini adalah contoh penggunaan operator ternary (? :) untuk menentukan kondisi lulus atau tidak lulus.
 
+Kode HTML + JavaScript ini adalah contoh penggunaan operator ternary (? :) untuk menentukan kondisi lulus atau tidak lulus.
 prompt("Nilai (0-100): ", 0); → saat halaman dibuka, muncul kotak input meminta pengguna memasukkan nilai (default = 0).
 
 var hasil = (nilai >= 60) ? "Lulus" : "Tidak Lulus"; → jika nilai yang dimasukkan lebih besar atau sama dengan 60, maka variabel hasil akan berisi "Lulus". Kalau kurang dari 60, berisi "Tidak Lulus".
