@@ -1,17 +1,62 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <title>Contoh Array</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Tipe Data dalam Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .data-item {
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #e8f4fc;
+            border-radius: 4px;
+        }
+        .type {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+    </style>
 </head>
 <body>
-  <script>
-    var buah = ["Apel", "Jeruk", "Mangga"];
-    document.write("Isi array awal: " + buah.join(", ") + "<br>");
-    buah.push("Pisang");
-    document.write("Setelah ditambah Pisang: " + buah.join(", ") + "<br>");
-    document.write("Buah pertama: " + buah[0] + "<br>");
-    document.write("Buah terakhir: " + buah[buah.length - 1] + "<br>");
-    buah[1] = "Semangka";
-    document.write("Setelah diganti: " + buah.join(", ") + "<br>");
-  </script>
+    <div class="container">
+        <h2>Contoh Array dengan Tipe Data</h2>
+        <div id="output">
+            <div class="data-item">String: <b>Sulfiana</b> <span class="type">(tipe: string)</span></div>
+            <div class="data-item">Number: <b>20</b> <span class="type">(tipe: number)</span></div>
+            <div class="data-item">Boolean: <b>true</b> <span class="type">(tipe: boolean)</span></div>
+        </div>
+    </div>
+
+    <script>
+        // Array berisi berbagai tipe data
+        let data = ["Sulfiana", 20, true];
+
+        // Tampilkan hasil
+        document.getElementById('output').innerHTML = `
+            <div class="data-item">String: <b>${data[0]}</b> <span class="type">(tipe: ${typeof data[0]})</span></div>
+            <div class="data-item">Number: <b>${data[1]}</b> <span class="type">(tipe: ${typeof data[1]})</span></div>
+            <div class="data-item">Boolean: <b>${data[2]}</b> <span class="type">(tipe: ${typeof data[2]})</span></div>
+        `;
+    </script>
 </body>
 </html>
