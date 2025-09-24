@@ -402,6 +402,9 @@
 
 
   <section id="kontak">
+<button class="message-btn" id="open-message-btn">
+  <i class="fas fa-envelope"></i> Kirim Pesan & Saran
+</button>
     <div class="container" data-aos="fade-up">
       <div class="section">
         <h2><i class="fas fa-envelope"></i> Hubungi Saya</h2>
@@ -685,7 +688,91 @@
     }, 100);
   });
 }
+// Fungsi untuk menampilkan modal pesan/saran
+function showMessageModal() {
+  const modal = document.getElementById('message-modal');
+  
+  // Tampilkan modal
+  modal.classList.add('active');
+  
+  // Reset form
+  document.getElementById('message-form').reset();
+}
+
+// Fungsi untuk menyembunyikan modal
+function hideMessageModal() {
+  const modal = document.getElementById('message-modal');
+  modal.classList.remove('active');
+}
+
+// Event listener untuk tombol buka modal
+document.addEventListener('DOMContentLoaded', function() {
+  // Event listener untuk tombol buka modal
+  document.getElementById('open-message-btn').addEventListener('click', function() {
+    showMessageModal();
+  });
+  
+  // Event listener untuk tombol batal
+  document.getElementById('cancel-btn').addEventListener('click', function() {
+    hideMessageModal();
+  });
+  
+  // Event listener untuk form submit
+  document.getElementById('message-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Di sini Anda bisa menambahkan kode untuk mengirim data ke server
+    // Untuk sekarang kita tampilkan alert saja
+    alert('Terima kasih! Pesan dan saran Anda telah dikirim. Sulfiana akan membacanya segera.');
+    
+    // Sembunyikan modal
+    hideMessageModal();
+  });
+  
+  // Event listener untuk menutup modal ketika klik di luar konten
+  document.getElementById('message-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      hideMessageModal();
+    }
+  });
+  
+  // Event listener untuk menutup modal dengan tombol Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      hideMessageModal();
+    }
+  });
+});
 
   </script>
+  <!-- Modal untuk Pesan dan Saran Umum -->
+<div class="modal" id="message-modal">
+  <div class="modal-content">
+    <h2>Kirim Pesan dan Saran</h2>
+    <p style="margin-bottom: 15px; text-align: center;">Kirim pesan atau saran Anda untuk Nur Amalia</p>
+    
+    <form id="message-form">
+      <div class="modal-form-group">
+        <label for="sender-name">Nama Anda</label>
+        <input type="text" id="sender-name" required>
+      </div>
+      
+      <div class="modal-form-group">
+        <label for="sender-email">Email Anda</label>
+        <input type="email" id="sender-email" required>
+      </div>
+      
+      <div class="modal-form-group">
+        <label for="message">Pesan/Saran</label>
+        <textarea id="message" required placeholder="Tulis pesan atau saran Anda di sini..."></textarea>
+      </div>
+      
+      <div class="modal-buttons">
+        <button type="button" class="modal-btn modal-btn-cancel" id="cancel-btn">Batal</button>
+        <button type="submit" class="modal-btn modal-btn-submit">Kirim Pesan</button>
+      </div>
+    </form>
+  </div>
+</div>
 </body>
 </html>
