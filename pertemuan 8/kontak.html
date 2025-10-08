@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Toko Sembako Anti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        'accent': {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'slide-in-right': 'slideInRight 0.3s ease-out',
+                        'bounce-in': 'bounceIn 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        bounceIn: {
+                            '0%': { transform: 'scale(0.3)', opacity: '0' },
+                            '50%': { transform: 'scale(1.05)' },
+                            '70%': { transform: 'scale(0.9)' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-inter">
+    <!-- Header -->
+    <header class="bg-gradient-to-br from-slate-50 to-blue-50 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-md">
+                            <i class="fas fa-store text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-slate-800">Toko Sembako Anti</h1>
+                            <p class="text-sm text-slate-600">Kebutuhan harian dengan harga terjangkau</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-700 font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-500 after:-bottom-1 after:left-0 after:transition-all after:duration-300 hover:after:w-full">Beranda</a>
+                    <a href="produk.html" class="text-slate-700 font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-500 after:-bottom-1 after:left-0 after:transition-all after:duration-300 hover:after:w-full">Produk</a>
+                    <a href="tentang.html" class="text-slate-700 font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-500 after:-bottom-1 after:left-0 after:transition-all after:duration-300 hover:after:w-full">Tentang</a>
+                    <a href="kontak.html" class="text-blue-600 font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-blue-500 after:-bottom-1 after:left-0">Kontak</a>
+                    <div class="cart-icon ml-4 relative cursor-pointer">
+                        <i class="fas fa-shopping-cart text-slate-700 text-xl"></i>
+                        <span class="cart-count absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">0</span>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <div class="cart-icon mr-4 relative cursor-pointer">
+                        <i class="fas fa-shopping-cart text-slate-700 text-xl"></i>
+                        <span class="cart-count absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">0</span>
+                    </div>
+                    <button id="mobile-menu-button" class="text-slate-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-slate-700 font-medium">Beranda</a>
+                <a href="produk.html" class="text-slate-700 font-medium">Produk</a>
+                <a href="tentang.html" class="text-slate-700 font-medium">Tentang</a>
+                <a href="kontak.html" class="text-blue-600 font-medium">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Header -->
+    <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hubungi Kami</h1>
+                <p class="text-xl mb-8">Ada pertanyaan atau ingin memesan? Silakan hubungi kami melalui berbagai cara yang tersedia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-800 mb-6">Informasi Kontak</h2>
+                        <p class="text-slate-600 mb-8">Kami siap melayani Anda dengan sepenuh hati. Jangan ragu untuk menghubungi kami melalui berbagai saluran yang tersedia.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4 p-6 bg-blue-50 rounded-xl border border-blue-100">
+                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Telepon/WhatsApp</h3>
+                                    <p class="text-slate-600 mb-2">+62 822-1325-3954</p>
+                                    <a href="https://wa.me/6282213253954" target="_blank" class="inline-flex items-center text-green-600 font-medium hover:text-green-700 transition">
+                                        <i class="fab fa-whatsapp mr-2"></i>
+                                        Chat via WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-6 bg-cyan-50 rounded-xl border border-cyan-100">
+                                <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Email</h3>
+                                    <p class="text-slate-600 mb-2">antisunarti34@gmail.com</p>
+                                    <a href="mailto:antisunarti34@gmail.com" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition">
+                                        <i class="fas fa-envelope mr-2"></i>
+                                        Kirim Email
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-6 bg-indigo-50 rounded-xl border border-indigo-100">
+                                <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Alamat</h3>
+                                    <p class="text-slate-600 mb-4">Jl. Teppo Batu, Kec. Pammana, Kab. Wajo, Sulawesi Selatan</p>
+                                    <a href="https://maps.app.goo.gl/4XAzZ4MHy2bV8Lhn6?g_st=iw" target="_blank" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-700 transition">
+                                        <i class="fas fa-map-marked-alt mr-2"></i>
+                                        Lihat di Google Maps
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold text-slate-800 mb-4">Ikuti Kami</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/share/1EESgR7NF4/" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition transform hover:-translate-y-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/sunarti6920?igsh=OTlxZnM2eXVpM2tt" class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white hover:from-purple-600 hover:to-pink-600 transition transform hover:-translate-y-1">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://wa.me/6282213253954" target="_blank" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition transform hover:-translate-y-1">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-800 mb-6">Kirim Pesan</h2>
+                        <p class="text-slate-600 mb-8">Isi form di bawah ini dan kami akan membalas pesan Anda secepatnya.</p>
+                        
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Nama Lengkap</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Masukkan nama lengkap">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="nama@email.com">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">Nomor Telepon</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="+62 xxx-xxxx-xxxx">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subjek</label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Subjek pesan">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Pesan</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Tulis pesan Anda di sini..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="bg-slate-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Lokasi Toko Kami</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Kunjungi toko kami di lokasi strategis untuk pengalaman belanja yang lebih personal</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200">
+                    <div class="h-96 bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center relative">
+                        <div class="text-center p-8 max-w-md">
+                            <i class="fas fa-map-marked-alt text-blue-500 text-6xl mb-4"></i>
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">Toko Sembako Anti</h3>
+                            <p class="text-slate-600 mb-6">Jl. Teppo Batu, Kec. Pammana, Kab. Wajo, Sulawesi Selatan</p>
+                            <a href="https://maps.app.goo.gl/4XAzZ4MHy2bV8Lhn6?g_st=iw" target="_blank" class="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Buka di Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section class="bg-slate-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Pertanyaan Umum</h2>
+                    <p class="text-slate-600">Beberapa pertanyaan yang sering diajukan oleh pelanggan kami</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-white rounded-xl p-6 border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Bagaimana cara memesan produk?</h3>
+                        <p class="text-slate-600">Anda bisa memesan melalui WhatsApp, telepon langsung, atau datang ke toko kami. Untuk pemesanan online, kami melayani pengiriman ke seluruh wilayah.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Apakah tersedia layanan pengiriman?</h3>
+                        <p class="text-slate-600">Ya, kami menyediakan layanan pengiriman untuk wilayah sekitar toko. Biaya pengiriman menyesuaikan jarak dan jumlah pesanan.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Bagaimana metode pembayaran yang diterima?</h3>
+                        <p class="text-slate-600">Kami menerima pembayaran tunai, transfer bank, dan beberapa metode pembayaran digital seperti QRIS dan e-wallet.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Apakah produk bisa dikembalikan?</h3>
+                        <p class="text-slate-600">Produk yang sudah dibeli tidak dapat dikembalikan kecuali ada kerusakan atau cacat produksi. Silakan hubungi kami untuk penanganan lebih lanjut.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-slate-800 to-blue-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-store text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-lg font-semibold">Toko Sembako Anti</p>
+                            <p class="text-sm text-slate-300">Melayani dengan hati, menyediakan kebutuhan rumah tangga Anda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-sm text-slate-300">&copy; 2025 Toko Anti. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                showNotification('Harap isi semua field yang wajib diisi', 'error');
+                return;
+            }
+            
+            // Simulate form submission
+            showNotification('Pesan Anda telah terkirim! Kami akan membalas secepatnya.', 'success');
+            contactForm.reset();
+        });
+
+        // Show notification
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            const bgColor = type === 'success' ? 'bg-green-500' : 'bg-red-500';
+            
+            notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300 animate-bounce-in`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
