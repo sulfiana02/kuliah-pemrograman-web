@@ -74,6 +74,17 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* Perbaikan untuk tombol keranjang di mobile */
+        .cart-icon {
+            z-index: 60;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .cart-icon {
+                padding: 8px;
+                margin-right: 8px;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-50 font-inter">
@@ -137,7 +148,7 @@
                     <a href="#kopi" class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full font-medium hover:bg-white/30 transition">Kopi</a>
                     <a href="#mie" class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full font-medium hover:bg-white/30 transition">Mie Instan</a>
                     <a href="#minuman" class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full font-medium hover:bg-white/30 transition">Minuman</a>
-                    <a href="#pencuci-piring" class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full font-medium hover:bg-white/30 transition">pencuci-piring</a>  
+                    <a href="#pencuci-piring" class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full font-medium hover:bg-white/30 transition">Pencuci Piring</a>  
                 </div>
             </div>
         </div>
@@ -535,7 +546,7 @@
                         <h4 class="font-semibold text-lg text-slate-800">A Mild</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 32.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Class Mild" data-price="30000" data-category="rokok">
+                    <div class="product-card bg-white rounded-xl shadowSm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Class Mild" data-price="30000" data-category="rokok">
                         <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
                             <i class="fas fa-smoking text-slate-500 text-5xl"></i>
                         </div>
@@ -593,6 +604,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Pencuci Piring -->
             <div class="mb-16" id="pencuci-piring">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Pencuci Piring</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -759,6 +772,11 @@
                             <div class="quantity-btn w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer mx-1 hover:bg-slate-200 transition" id="increase-quantity">+</div>
                         </div>
                     </div>
+                    <!-- WhatsApp Direct Button -->
+                    <button class="whatsapp-direct-btn w-full py-3 text-lg bg-gradient-to-r from-green-500 to-green-600 text-white border-none rounded cursor-pointer mb-3 transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:shadow-lg flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp"></i>
+                        Pesan Langsung via WhatsApp
+                    </button>
                     <button class="add-to-cart-btn w-full py-3 text-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white border-none rounded cursor-pointer mt-2 transition-all duration-300 hover:from-blue-600 hover:to-indigo-700 hover:shadow-lg" id="add-to-cart">Tambah ke Keranjang</button>
                 </div>
             </div>
@@ -781,7 +799,11 @@
             <span>Total:</span>
             <span>Rp 0</span>
         </div>
-        <button class="add-to-cart-btn w-full mt-4 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white border-none rounded cursor-pointer transition-all duration-300 hover:from-blue-600 hover:to-indigo-700">Checkout</button>
+        <!-- WhatsApp Checkout Button -->
+        <button class="whatsapp-checkout-btn w-full mt-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white border-none rounded-lg cursor-pointer transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:shadow-lg font-semibold flex items-center justify-center gap-3 text-lg">
+            <i class="fab fa-whatsapp text-xl"></i>
+            Pesan via WhatsApp
+        </button>
     </div>
 
     <script>
@@ -805,6 +827,7 @@
         const decreaseQuantity = document.getElementById('decrease-quantity');
         const increaseQuantity = document.getElementById('increase-quantity');
         const addToCartBtn = document.getElementById('add-to-cart');
+        const whatsappDirectBtn = document.querySelector('.whatsapp-direct-btn');
 
         let currentProduct = null;
         let quantity = 1;
@@ -898,7 +921,7 @@
                     break;
                 case 'pencuci-piring':
                     imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-cyan-50');
-                    imageElement.innerHTML = '<i class="fas fa-soap text-blue-500 text  -7xl"></i>';
+                    imageElement.innerHTML = '<i class="fas fa-soap text-blue-500 text-7xl"></i>';
                     break;
                 case 'minuman':
                     imageElement.classList.add('bg-gradient-to-br', 'from-yellow-50', 'to-amber-50');
@@ -938,22 +961,26 @@
             }
         });
 
-        // Cart functionality
-        const cartIcon = document.querySelector('.cart-icon');
+        // Cart functionality - PERBAIKAN UTAMA: Event listener untuk semua elemen keranjang
+        const cartIcons = document.querySelectorAll('.cart-icon');
         const cartSidebar = document.getElementById('cart-sidebar');
         const cartOverlay = document.getElementById('cart-overlay');
         const closeCart = document.getElementById('close-cart');
         const cartItems = document.getElementById('cart-items');
         const cartTotal = document.getElementById('cart-total');
-        const cartCount = document.querySelector('.cart-count');
+        const cartCounts = document.querySelectorAll('.cart-count');
+        const whatsappCheckoutBtn = document.querySelector('.whatsapp-checkout-btn');
 
         let cart = [];
 
-        // Open cart
-        cartIcon.addEventListener('click', () => {
-            cartSidebar.classList.remove('-right-96');
-            cartSidebar.classList.add('right-0');
-            cartOverlay.classList.remove('hidden');
+        // Open cart - PERBAIKAN: Event listener untuk semua ikon keranjang (desktop & mobile)
+        cartIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.stopPropagation(); // Mencegah event bubbling
+                cartSidebar.classList.remove('-right-96');
+                cartSidebar.classList.add('right-0');
+                cartOverlay.classList.remove('hidden');
+            });
         });
 
         // Close cart
@@ -986,6 +1013,81 @@
                 showNotification(`${currentProduct.name} ditambahkan ke keranjang`);
             }
         });
+
+        // WhatsApp Direct Order
+        whatsappDirectBtn.addEventListener('click', function() {
+            if (!currentProduct) return;
+            
+            const message = `🛒 *PESANAN CEPAT TOKO SEMBAKO ANTI* 🛒\n\n` +
+                           `Halo! Saya ingin memesan:\n\n` +
+                           `*${currentProduct.name}*\n` +
+                           `💰 Harga: Rp ${currentProduct.price.toLocaleString('id-ID')}\n` +
+                           `🔢 Jumlah: ${currentProduct.quantity}\n` +
+                           `➕ Subtotal: Rp ${(currentProduct.price * currentProduct.quantity).toLocaleString('id-ID')}\n\n` +
+                           `Silakan konfirmasi ketersediaan stock. Terima kasih! 😊\n\n` +
+                           `_Pesan ini dikirim via website Toko Sembako Anti_`;
+            
+            const phoneNumber = '6282213253954';
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+            
+            // Tutup modal
+            productDetail.querySelector('.product-detail-content').classList.remove('translate-y-0');
+            productDetail.classList.remove('opacity-100');
+            setTimeout(() => {
+                productDetail.classList.add('hidden');
+            }, 300);
+        });
+
+        // WhatsApp Checkout
+        whatsappCheckoutBtn.addEventListener('click', sendOrderToWhatsApp);
+
+        // WhatsApp Integration Function
+        function sendOrderToWhatsApp() {
+            if (cart.length === 0) {
+                showNotification('Keranjang belanja masih kosong', 'error');
+                return;
+            }
+
+            // Format pesan WhatsApp
+            let message = `🛒 *PESANAN TOKO SEMBAKO ANTI* 🛒\n\n`;
+            message += `Halo! Saya ingin memesan produk berikut:\n\n`;
+            
+            // Detail produk
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                message += `*${index + 1}. ${item.name}*\n`;
+                message += `   💰 Harga Satuan: Rp ${item.price.toLocaleString('id-ID')}\n`;
+                message += `   🔢 Jumlah: ${item.quantity} pcs\n`;
+                message += `   ➕ Subtotal: Rp ${itemTotal.toLocaleString('id-ID')}\n\n`;
+            });
+
+            // Total
+            const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            message += `═══════════════════\n`;
+            message += `💰 *TOTAL: Rp ${totalAmount.toLocaleString('id-ID')}*\n`;
+            message += `═══════════════════\n\n`;
+            message += `Silakan konfirmasi ketersediaan stock dan total yang harus dibayar. Terima kasih! 😊\n\n`;
+            message += `_Pesan ini dikirim via website Toko Sembako Anti_`;
+
+            // Nomor WhatsApp
+            const phoneNumber = '6282213253954';
+            
+            // Encode message untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Redirect ke WhatsApp
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+            
+            // Tutup cart sidebar
+            cartSidebar.classList.remove('right-0');
+            cartSidebar.classList.add('-right-96');
+            cartOverlay.classList.add('hidden');
+            
+            // Kosongkan keranjang setelah order
+            cart = [];
+            updateCart();
+        }
 
         // Add product to cart
         function addToCart(product) {
@@ -1040,7 +1142,10 @@
                 <span>Rp ${total.toLocaleString('id-ID')}</span>
             `;
             
-            cartCount.textContent = itemCount;
+            // PERBAIKAN: Update semua indikator jumlah keranjang
+            cartCounts.forEach(count => {
+                count.textContent = itemCount;
+            });
             
             // Add event listeners to cart item buttons
             document.querySelectorAll('.decrease-cart-item').forEach(btn => {
@@ -1084,9 +1189,11 @@
         }
 
         // Show notification
-        function showNotification(message) {
+        function showNotification(message, type = 'success') {
             const notification = document.createElement('div');
-            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300 animate-bounce-in';
+            const bgColor = type === 'success' ? 'bg-green-500' : 'bg-red-500';
+            
+            notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300`;
             notification.textContent = message;
             
             document.body.appendChild(notification);

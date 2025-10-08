@@ -74,6 +74,20 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        /* Perbaikan untuk tombol keranjang di mobile */
+        .cart-icon {
+            z-index: 60;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .cart-icon {
+                padding: 8px;
+                margin-right: 8px;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-50 font-inter">
@@ -208,40 +222,108 @@
                     <!-- Contact Form -->
                     <div>
                         <h2 class="text-3xl font-bold text-slate-800 mb-6">Kirim Pesan</h2>
-                        <p class="text-slate-600 mb-8">Isi form di bawah ini dan kami akan membalas pesan Anda secepatnya.</p>
+                        <p class="text-slate-600 mb-8">Isi form di bawah ini dan pesan Anda akan langsung terkirim ke email kami.</p>
                         
-                        <form class="space-y-6">
+                        <!-- Form yang mengirim ke email -->
+                        <form 
+                            action="https://formsubmit.co/antisunarti34@gmail.com" 
+                            method="POST"
+                            class="space-y-6"
+                            id="contact-form"
+                        >
+                            <!-- Input tersembunyi untuk konfigurasi FormSubmit -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_subject" value="Pesan Baru dari Website Toko Sembako Anti">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                            
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Nama Lengkap</label>
-                                    <input type="text" id="name" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Masukkan nama lengkap">
+                                <div class="form-group">
+                                    <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Nama Lengkap *</label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name"
+                                        required
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" 
+                                        placeholder="Masukkan nama lengkap"
+                                    >
                                 </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                                    <input type="email" id="email" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="nama@email.com">
+                                <div class="form-group">
+                                    <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email *</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email"
+                                        required
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" 
+                                        placeholder="nama@email.com"
+                                    >
                                 </div>
                             </div>
                             
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">Nomor Telepon</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="+62 xxx-xxxx-xxxx">
+                            <div class="form-group">
+                                <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">Nomor Telepon/WhatsApp</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone"
+                                    class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" 
+                                    placeholder="+62 xxx-xxxx-xxxx"
+                                >
                             </div>
                             
-                            <div>
-                                <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subjek</label>
-                                <input type="text" id="subject" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Subjek pesan">
+                            <div class="form-group">
+                                <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subjek *</label>
+                                <select 
+                                    id="subject" 
+                                    name="subject"
+                                    required
+                                    class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                                >
+                                    <option value="">Pilih subjek pesan</option>
+                                    <option value="Pertanyaan tentang produk">Pertanyaan tentang produk</option>
+                                    <option value="Pemesanan produk">Pemesanan produk</option>
+                                    <option value="Keluhan dan saran">Keluhan dan saran</option>
+                                    <option value="Kerjasama bisnis">Kerjasama bisnis</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
                             </div>
                             
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Pesan</label>
-                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Tulis pesan Anda di sini..."></textarea>
+                            <div class="form-group">
+                                <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Pesan *</label>
+                                <textarea 
+                                    id="message" 
+                                    name="message"
+                                    rows="5" 
+                                    required
+                                    class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" 
+                                    placeholder="Tulis pesan Anda di sini..."
+                                ></textarea>
                             </div>
                             
-                            <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                            <button 
+                                type="submit" 
+                                class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center justify-center"
+                                id="submit-btn"
+                            >
                                 <i class="fas fa-paper-plane mr-2"></i>
                                 Kirim Pesan
                             </button>
+
+                            <p class="text-sm text-slate-500 text-center mt-4">
+                                * Pesan Anda akan langsung dikirim ke email kami dan akan dibalas secepatnya.
+                            </p>
                         </form>
+
+                        <!-- Alternatif: Jika FormSubmit tidak bekerja, gunakan mailto -->
+                        <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                            <p class="text-sm text-yellow-800 text-center">
+                                <i class="fas fa-info-circle mr-1"></i>
+                                Jika form di atas tidak berfungsi, silakan kirim email langsung ke: 
+                                <a href="mailto:antisunarti34@gmail.com" class="font-semibold underline">antisunarti34@gmail.com</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,7 +356,6 @@
         </div>
     </section>
 
-
     <!-- FAQ Section -->
     <section class="bg-slate-50 py-16">
         <div class="container mx-auto px-4">
@@ -287,7 +368,7 @@
                 <div class="space-y-4">
                     <div class="bg-white rounded-xl p-6 border border-slate-200">
                         <h3 class="text-lg font-semibold text-slate-800 mb-2">Bagaimana cara memesan produk?</h3>
-                        <p class="text-slate-600">Anda bisa memesan melalui WhatsApp, telepon langsung, atau datang ke toko kami. Untuk pemesanan online, kami melayani pengiriman ke seluruh wilayah.</p>
+                        <p class="text-slate-600">Anda bisa memesan melalui WhatsApp, telepon langsung, datang ke toko kami, atau melalui form kontak di website ini.</p>
                     </div>
                     
                     <div class="bg-white rounded-xl p-6 border border-slate-200">
@@ -301,8 +382,8 @@
                     </div>
                     
                     <div class="bg-white rounded-xl p-6 border border-slate-200">
-                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Apakah produk bisa dikembalikan?</h3>
-                        <p class="text-slate-600">Produk yang sudah dibeli tidak dapat dikembalikan kecuali ada kerusakan atau cacat produksi. Silakan hubungi kami untuk penanganan lebih lanjut.</p>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Berapa lama pesanan diproses?</h3>
+                        <p class="text-slate-600">Pesanan akan diproses dalam 1-2 jam setelah konfirmasi pembayaran. Untuk pengiriman, tergantung jarak lokasi Anda.</p>
                     </div>
                 </div>
             </div>
@@ -331,6 +412,33 @@
         </div>
     </footer>
 
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay fixed inset-0 bg-black/50 z-40 hidden" id="cart-overlay"></div>
+    <div class="cart-sidebar fixed top-0 -right-96 w-80 h-full bg-white shadow-lg z-50 transition-all duration-300 p-5 overflow-y-auto" id="cart-sidebar">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold text-slate-800">Keranjang Belanja</h2>
+            <div class="close-btn w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-blue-500 hover:text-white" id="close-cart">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be added here dynamically -->
+            <div class="text-center py-8 text-slate-500">
+                <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+                <p>Keranjang belanja masih kosong</p>
+            </div>
+        </div>
+        <div class="cart-total flex justify-between mt-5 pt-5 border-t-2 border-slate-200 font-semibold text-lg text-slate-800 hidden" id="cart-total">
+            <span>Total:</span>
+            <span>Rp 0</span>
+        </div>
+        <!-- WhatsApp Checkout Button -->
+        <button class="whatsapp-checkout-btn w-full mt-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white border-none rounded-lg cursor-pointer transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:shadow-lg font-semibold flex items-center justify-center gap-3 text-lg hidden" id="whatsapp-checkout">
+            <i class="fab fa-whatsapp text-xl"></i>
+            Pesan via WhatsApp
+        </button>
+    </div>
+
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -340,33 +448,237 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Form submission
-        const contactForm = document.querySelector('form');
+        // Form submission handling
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simple form validation
+            // Validasi form sebelum dikirim
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            if (!name || !email || !message) {
+            if (!name || !email || !subject || !message) {
+                e.preventDefault();
                 showNotification('Harap isi semua field yang wajib diisi', 'error');
                 return;
             }
+
+            // Tampilkan loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Mengirim...';
+            submitBtn.disabled = true;
             
-            // Simulate form submission
-            showNotification('Pesan Anda telah terkirim! Kami akan membalas secepatnya.', 'success');
-            contactForm.reset();
+            // Simpan teks asli tombol
+            const originalText = submitBtn.innerHTML;
+            
+            // Jika form berhasil dikirim, tampilkan pesan sukses
+            setTimeout(() => {
+                showNotification('Pesan Anda telah terkirim! Kami akan membalas secepatnya.', 'success');
+                contactForm.reset();
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Kirim Pesan';
+                submitBtn.disabled = false;
+            }, 2000);
         });
+
+        // Cart functionality - PERBAIKAN UTAMA: Event listener untuk semua elemen keranjang
+        const cartIcons = document.querySelectorAll('.cart-icon');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const closeCart = document.getElementById('close-cart');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const cartCounts = document.querySelectorAll('.cart-count');
+        const whatsappCheckoutBtn = document.getElementById('whatsapp-checkout');
+
+        let cart = [];
+
+        // Open cart - PERBAIKAN: Event listener untuk semua ikon keranjang (desktop & mobile)
+        cartIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.stopPropagation(); // Mencegah event bubbling
+                cartSidebar.classList.remove('-right-96');
+                cartSidebar.classList.add('right-0');
+                cartOverlay.classList.remove('hidden');
+                updateCart();
+            });
+        });
+
+        // Close cart
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('right-0');
+            cartSidebar.classList.add('-right-96');
+            cartOverlay.classList.add('hidden');
+        });
+
+        // Close cart when overlay is clicked
+        cartOverlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('right-0');
+            cartSidebar.classList.add('-right-96');
+            cartOverlay.classList.add('hidden');
+        });
+
+        // WhatsApp Checkout
+        whatsappCheckoutBtn.addEventListener('click', sendOrderToWhatsApp);
+
+        // WhatsApp Integration Function
+        function sendOrderToWhatsApp() {
+            if (cart.length === 0) {
+                showNotification('Keranjang belanja masih kosong', 'error');
+                return;
+            }
+
+            // Format pesan WhatsApp
+            let message = `🛒 *PESANAN TOKO SEMBAKO ANTI* 🛒\n\n`;
+            message += `Halo! Saya ingin memesan produk berikut:\n\n`;
+            
+            // Detail produk
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                message += `*${index + 1}. ${item.name}*\n`;
+                message += `   💰 Harga Satuan: Rp ${item.price.toLocaleString('id-ID')}\n`;
+                message += `   🔢 Jumlah: ${item.quantity} pcs\n`;
+                message += `   ➕ Subtotal: Rp ${itemTotal.toLocaleString('id-ID')}\n\n`;
+            });
+
+            // Total
+            const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            message += `═══════════════════\n`;
+            message += `💰 *TOTAL: Rp ${totalAmount.toLocaleString('id-ID')}*\n`;
+            message += `═══════════════════\n\n`;
+            message += `Silakan konfirmasi ketersediaan stock dan total yang harus dibayar. Terima kasih! 😊\n\n`;
+            message += `_Pesan ini dikirim via website Toko Sembako Anti_`;
+
+            // Nomor WhatsApp
+            const phoneNumber = '6282213253954';
+            
+            // Encode message untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Redirect ke WhatsApp
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+            
+            // Tutup cart sidebar
+            cartSidebar.classList.remove('right-0');
+            cartSidebar.classList.add('-right-96');
+            cartOverlay.classList.add('hidden');
+            
+            // Kosongkan keranjang setelah order
+            cart = [];
+            updateCart();
+        }
+
+        // Update cart display
+        function updateCart() {
+            // Clear cart items
+            cartItems.innerHTML = '';
+            
+            let total = 0;
+            let itemCount = 0;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="text-center py-8 text-slate-500">
+                        <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+                        <p>Keranjang belanja masih kosong</p>
+                    </div>
+                `;
+                cartTotal.classList.add('hidden');
+                whatsappCheckoutBtn.classList.add('hidden');
+            } else {
+                // Add each item to cart
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    itemCount += item.quantity;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item flex items-center mb-4 pb-4 border-b border-slate-200';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-img w-14 h-14 rounded bg-slate-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-box text-slate-500"></i>
+                        </div>
+                        <div class="cart-item-details flex-1">
+                            <div class="cart-item-title font-semibold mb-1 text-slate-800">${item.name}</div>
+                            <div class="cart-item-price text-blue-500 font-semibold">Rp ${item.price.toLocaleString('id-ID')} x ${item.quantity}</div>
+                        </div>
+                        <div class="cart-item-actions flex items-center">
+                            <div class="decrease-cart-item quantity-btn w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer mx-1 hover:bg-slate-200 transition" data-product="${item.name}">-</div>
+                            <span class="mx-2 text-slate-700">${item.quantity}</span>
+                            <div class="increase-cart-item quantity-btn w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer mx-1 hover:bg-slate-200 transition" data-product="${item.name}">+</div>
+                        </div>
+                    `;
+                    
+                    cartItems.appendChild(cartItem);
+                });
+                
+                cartTotal.classList.remove('hidden');
+                whatsappCheckoutBtn.classList.remove('hidden');
+                
+                // Update total and count
+                cartTotal.innerHTML = `
+                    <span>Total:</span>
+                    <span>Rp ${total.toLocaleString('id-ID')}</span>
+                `;
+                
+                // Add event listeners to cart item buttons
+                document.querySelectorAll('.decrease-cart-item').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const productName = e.target.getAttribute('data-product');
+                        decreaseCartItem(productName);
+                    });
+                });
+                
+                document.querySelectorAll('.increase-cart-item').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const productName = e.target.getAttribute('data-product');
+                        increaseCartItem(productName);
+                    });
+                });
+            }
+            
+            // PERBAIKAN: Update semua indikator jumlah keranjang
+            cartCounts.forEach(count => {
+                count.textContent = itemCount;
+            });
+        }
+
+        // Decrease cart item quantity
+        function decreaseCartItem(productName) {
+            const item = cart.find(item => item.name === productName);
+            
+            if (item) {
+                if (item.quantity > 1) {
+                    item.quantity--;
+                } else {
+                    cart = cart.filter(item => item.name !== productName);
+                }
+                
+                updateCart();
+            }
+        }
+
+        // Increase cart item quantity
+        function increaseCartItem(productName) {
+            const item = cart.find(item => item.name === productName);
+            
+            if (item) {
+                item.quantity++;
+                updateCart();
+            }
+        }
 
         // Show notification
         function showNotification(message, type = 'success') {
             const notification = document.createElement('div');
             const bgColor = type === 'success' ? 'bg-green-500' : 'bg-red-500';
+            const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
             
-            notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300 animate-bounce-in`;
-            notification.textContent = message;
+            notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300 flex items-center`;
+            notification.innerHTML = `
+                <i class="fas ${icon} mr-2"></i>
+                <span>${message}</span>
+            `;
             
             document.body.appendChild(notification);
             
@@ -377,10 +689,40 @@
             setTimeout(() => {
                 notification.classList.add('translate-x-full');
                 setTimeout(() => {
-                    document.body.removeChild(notification);
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
                 }, 300);
-            }, 4000);
+            }, 5000);
         }
+
+        // Auto-format phone number
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.startsWith('0')) {
+                value = '62' + value.substring(1);
+            }
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '-' + value.substring(2);
+            }
+            if (value.length > 6) {
+                value = value.substring(0, 6) + '-' + value.substring(6);
+            }
+            if (value.length > 11) {
+                value = value.substring(0, 11) + '-' + value.substring(11);
+            }
+            e.target.value = value;
+        });
+
+        // Untuk halaman kontak, tambahkan notifikasi bahwa keranjang tersedia di halaman produk
+        cartIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                if (cart.length === 0) {
+                    showNotification('Keranjang belanja tersedia di halaman produk', 'info');
+                }
+            });
+        });
     </script>
 </body>
 </html>
