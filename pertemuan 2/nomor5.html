@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colspan & Rowspan</title>
+  <style>
+    body {
+      background-color: #e57d7d; /* warna pink */
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .container {
+      position: relative;
+      width: fit-content;
+      margin: 50px auto;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+    td {
+      border: 2px solid white;
+      width: 120px;
+      height: 70px;
+      text-align: center;
+      vertical-align: middle;
+      background-color: #ddd;
+      color: black;
+      font-weight: bold;
+      position: relative;
+    }
+    .colspan {
+      background-color: #77d1a5; /* hijau */
+    }
+    .rowspan {
+      background-color: #823c74; /* ungu */
+      color: white;
+    }
+
+    /* Keterangan */
+    .note-colspan {
+      position: absolute;
+      top: -70px;
+      left: 200px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .note-rowspan {
+      position: absolute;
+      top: 120px;
+      left: -200px;
+      font-size: 14px;
+      text-align: right;
+      width: 180px;
+    }
+
+    /* SVG panah */
+    svg {
+      position: absolute;
+      overflow: visible;
+      pointer-events: none; /* biar tidak mengganggu klik */
+    }
+    .arrow {
+      fill: none;
+      stroke: white;
+      stroke-width: 2;
+      marker-end: url(#arrowhead);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Definisi Panah -->
+    <svg width="0" height="0">
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                refX="10" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="white" />
+        </marker>
+      </defs>
+    </svg>
+
+    <!-- Keterangan -->
+    <div class="note-colspan" id="note-colspan">sel ini telah <br> bergabung secara colspan</div>
+    <div class="note-rowspan" id="note-rowspan">sel ini telah <br> bergabung secara rowspan</div>
+
+    <!-- Tabel -->
+    <table>
+      <tr>
+        <td></td>
+        <td colspan="2" class="colspan" id="colspan-cell">colspan = "2"</td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="rowspan" id="rowspan-cell">rowspan = "2"</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <!-- Panah dari teks ke sel -->
+    <!-- Panah Colspan -->
+    <svg style="top:-40px; left:260px; width:150px; height:100px;">
+      <path d="M 0 0 Q 80 40 130 70" class="arrow" />
+    </svg>
+
+    <!-- Panah Rowspan -->
+    <svg style="top:150px; left:-50px; width:150px; height:100px;">
+      <path d="M 100 0 Q 60 50 100 70" class="arrow" />
+    </svg>
+
+  </div>
+</body>
+</html>

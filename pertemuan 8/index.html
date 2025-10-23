@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Toko Sembako Anti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        'accent': {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'slide-in-right': 'slideInRight 0.3s ease-out',
+                        'bounce-in': 'bounceIn 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        bounceIn: {
+                            '0%': { transform: 'scale(0.3)', opacity: '0' },
+                            '50%': { transform: 'scale(1.05)' },
+                            '70%': { transform: 'scale(0.9)' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Perbaikan untuk tombol keranjang di mobile */
+        .cart-icon {
+            z-index: 60;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .cart-icon {
+                padding: 8px;
+                margin-right: 8px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-inter">
+    <!-- Header -->
+    <header class="bg-gradient-to-br from-slate-50 to-blue-50 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-md">
+                            <i class="fas fa-store text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-slate-800">Toko Sembako Anti</h1>
+                            <p class="text-sm text-slate-600">Kebutuhan harian dengan harga terjangkau</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-blue-600 font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-blue-500 after:-bottom-1 after:left-0">Beranda</a>
+                    <a href="produk.html" class="text-slate-700 font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-500 after:-bottom-1 after:left-0 after:transition-all after:duration-300 hover:after:w-full">Produk</a>
+                    <a href="tentang.html" class="text-slate-700 font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-500 after:-bottom-1 after:left-0 after:transition-all after:duration-300 hover:after:w-full">Tentang</a>
+                    <a href="kontak.html" class="text-slate-700 font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-500 after:-bottom-1 after:left-0 after:transition-all after:duration-300 hover:after:w-full">Kontak</a>
+                    <div class="cart-icon ml-4 relative cursor-pointer">
+                        <i class="fas fa-shopping-cart text-slate-700 text-xl"></i>
+                        <span class="cart-count absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">0</span>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <div class="cart-icon mr-4 relative cursor-pointer">
+                        <i class="fas fa-shopping-cart text-slate-700 text-xl"></i>
+                        <span class="cart-count absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">0</span>
+                    </div>
+                    <button id="mobile-menu-button" class="text-slate-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-blue-600 font-medium">Beranda</a>
+                <a href="produk.html" class="text-slate-700 font-medium">Produk</a>
+                <a href="tentang.html" class="text-slate-700 font-medium">Tentang</a>
+                <a href="kontak.html" class="text-slate-700 font-medium">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-slate-900/70 to-blue-900/70 bg-cover bg-center bg-no-repeat bg-[url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Belanja Kebutuhan Harian Lebih Mudah</h1>
+                <p class="text-xl mb-8">Produk berkualitas dengan harga terjangkau untuk keluarga Indonesia. Kami menyediakan berbagai macam produk sembako dengan kualitas terbaik.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="produk.html" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/40 hover:-translate-y-1 transition-all duration-300 text-center">Lihat Produk</a>
+                    <a href="kontak.html" class="bg-white text-slate-800 px-8 py-3 rounded-full font-semibold hover:bg-slate-100 transition text-center">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">Mengapa Memilih Kami?</h2>
+                <p class="text-slate-600 text-lg">Kami berkomitmen untuk memberikan pelayanan terbaik dengan produk berkualitas dan harga yang terjangkau.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-blue-50 border border-blue-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Kualitas Terjamin</h3>
+                    <p class="text-slate-600">Produk dengan kualitas terbaik langsung dari distributor resmi.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-cyan-50 border border-cyan-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tags text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Harga Terjangkau</h3>
+                    <p class="text-slate-600">Harga kompetitif dengan kualitas yang tidak perlu diragukan.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-indigo-50 border border-indigo-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shipping-fast text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Pengiriman Cepat</h3>
+                    <p class="text-slate-600">Pesanan Anda akan diproses dan dikirim dengan cepat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview Section -->
+    <section class="bg-slate-50 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">Produk Unggulan</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Beberapa produk terbaik kami. Lihat semua produk di halaman produk.</p>
+            </div>
+
+            <!-- Shampo -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Shampo</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Rejoice" data-price="10000" data-category="shampo">
+                        <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-pump-soap text-blue-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Rejoice</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sunsilk" data-price="10000" data-category="shampo">
+                        <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-pump-soap text-cyan-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Sunsilk</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Head & Shoulders" data-price="10000" data-category="shampo">
+                        <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-pump-soap text-indigo-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Head & Shoulders</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lifebuoy" data-price="5000" data-category="shampo">
+                        <div class="h-32 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-pump-soap text-sky-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Lifebuoy</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sabun Mandi -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Sabun Mandi</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Nuvo" data-price="4000" data-category="sabun">
+                        <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-soap text-blue-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Nuvo</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 4.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Shinzui" data-price="5000" data-category="sabun">
+                        <div class="h-32 bg-gradient-to-br from-cyan-50 to-sky-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-soap text-cyan-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Shinzui</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Giv" data-price="5000" data-category="sabun">
+                        <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-soap text-indigo-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Giv</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lervia" data-price="5000" data-category="sabun">
+                        <div class="h-32 bg-gradient-to-br from-violet-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-soap text-violet-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Lervia</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="produk.html" class="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/40 hover:-translate-y-1 transition-all duration-300">Lihat Semua Produk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">Apa Kata Pelanggan Kami?</h2>
+                <p class="text-slate-600 text-lg">Kepuasan pelanggan adalah prioritas utama kami.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Budi Santoso</h3>
+                    <p class="text-slate-600">"Produknya lengkap dan harganya terjangkau. Pelayanannya juga ramah dan cepat."</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Sari Indah</h3>
+                    <p class="text-slate-600">"Selalu belanja di sini untuk kebutuhan sehari-hari. Kualitas produk terjamin dan segar."</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Ahmad Rizki</h3>
+                    <p class="text-slate-600">"Pengiriman cepat dan produk sampai dalam kondisi baik. Recommended banget!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-slate-800 to-blue-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-store text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-lg font-semibold">Toko Sembako Anti</p>
+                            <p class="text-sm text-slate-300">Melayani dengan hati, menyediakan kebutuhan rumah tangga Anda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-sm text-slate-300">&copy; 2025 Toko Anti. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div class="product-detail fixed inset-0 bg-white/95 z-50 hidden items-center justify-center opacity-0 transition-opacity duration-300" id="product-detail">
+        <div class="product-detail-content bg-white rounded-xl shadow-2xl max-w-4xl w-11/12 max-h-[90vh] overflow-y-auto p-8 relative transform translate-y-5 transition-transform duration-300">
+            <div class="close-btn absolute top-4 right-4 bg-slate-100 w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-blue-500 hover:text-white" id="close-product-detail">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-center justify-center">
+                    <div class="h-64 w-64 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg flex items-center justify-center" id="product-image">
+                        <i class="fas fa-pump-soap text-blue-500 text-7xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800 mb-4" id="product-name">Product Name</h2>
+                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-lg font-semibold inline-block mb-6" id="product-price">Rp 0</div>
+                    <p class="text-slate-600 mb-6" id="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="flex items-center mb-6">
+                        <span class="mr-4 text-slate-700">Jumlah:</span>
+                        <div class="flex items-center">
+                            <div class="quantity-btn w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer mx-1 hover:bg-slate-200 transition" id="decrease-quantity">-</div>
+                            <span class="mx-3 text-lg font-semibold" id="product-quantity">1</span>
+                            <div class="quantity-btn w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer mx-1 hover:bg-slate-200 transition" id="increase-quantity">+</div>
+                        </div>
+                    </div>
+                    <!-- WhatsApp Direct Button -->
+                    <button class="whatsapp-direct-btn w-full py-3 text-lg bg-gradient-to-r from-green-500 to-green-600 text-white border-none rounded cursor-pointer mb-3 transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:shadow-lg flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp"></i>
+                        Pesan Langsung via WhatsApp
+                    </button>
+                    <button class="add-to-cart-btn w-full py-3 text-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white border-none rounded cursor-pointer mt-2 transition-all duration-300 hover:from-blue-600 hover:to-indigo-700 hover:shadow-lg" id="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay fixed inset-0 bg-black/50 z-40 hidden" id="cart-overlay"></div>
+    <div class="cart-sidebar fixed top-0 -right-96 w-80 h-full bg-white shadow-lg z-50 transition-all duration-300 p-5 overflow-y-auto" id="cart-sidebar">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold text-slate-800">Keranjang Belanja</h2>
+            <div class="close-btn w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-blue-500 hover:text-white" id="close-cart">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-total flex justify-between mt-5 pt-5 border-t-2 border-slate-200 font-semibold text-lg text-slate-800" id="cart-total">
+            <span>Total:</span>
+            <span>Rp 0</span>
+        </div>
+        <!-- WhatsApp Checkout Button -->
+        <button class="whatsapp-checkout-btn w-full mt-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white border-none rounded-lg cursor-pointer transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:shadow-lg font-semibold flex items-center justify-center gap-3 text-lg">
+            <i class="fab fa-whatsapp text-xl"></i>
+            Pesan via WhatsApp
+        </button>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Product detail functionality
+        const productDetail = document.getElementById('product-detail');
+        const closeProductDetail = document.getElementById('close-product-detail');
+        const productCards = document.querySelectorAll('.product-card');
+        const productName = document.getElementById('product-name');
+        const productPrice = document.getElementById('product-price');
+        const productDescription = document.getElementById('product-description');
+        const productImage = document.getElementById('product-image');
+        const productQuantity = document.getElementById('product-quantity');
+        const decreaseQuantity = document.getElementById('decrease-quantity');
+        const increaseQuantity = document.getElementById('increase-quantity');
+        const addToCartBtn = document.getElementById('add-to-cart');
+        const whatsappDirectBtn = document.querySelector('.whatsapp-direct-btn');
+
+        let currentProduct = null;
+        let quantity = 1;
+
+        // Open product detail when product card is clicked
+        productCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const product = card.getAttribute('data-product');
+                const price = card.getAttribute('data-price');
+                const category = card.getAttribute('data-category');
+                
+                // Set product details
+                productName.textContent = product;
+                productPrice.textContent = `Rp ${parseInt(price).toLocaleString('id-ID')}`;
+                productDescription.textContent = `Deskripsi untuk ${product}. Produk berkualitas dengan harga terjangkau.`;
+                
+                // Update product image based on category
+                updateProductImage(category, productImage);
+                
+                // Reset quantity
+                quantity = 1;
+                productQuantity.textContent = quantity;
+                
+                // Set current product
+                currentProduct = {
+                    name: product,
+                    price: parseInt(price),
+                    quantity: quantity,
+                    category: category
+                };
+                
+                // Show product detail with animation
+                productDetail.classList.remove('hidden');
+                setTimeout(() => {
+                    productDetail.classList.add('opacity-100');
+                    productDetail.querySelector('.product-detail-content').classList.add('translate-y-0');
+                }, 10);
+            });
+        });
+
+        // Update product image based on category
+        function updateProductImage(category, imageElement) {
+            // Clear existing classes
+            imageElement.className = 'h-64 w-64 rounded-lg flex items-center justify-center';
+            
+            // Set gradient and icon based on category
+            switch(category) {
+                case 'shampo':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-pump-soap text-blue-500 text-7xl"></i>';
+                    break;
+                case 'sabun':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-cyan-50');
+                    imageElement.innerHTML = '<i class="fas fa-soap text-blue-500 text-7xl"></i>';
+                    break;
+                case 'sabun-cuci':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-cyan-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-pump-soap text-cyan-500 text-7xl"></i>';
+                    break;
+                case 'obat-nyamuk':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-bug text-blue-500 text-7xl"></i>';
+                    break;
+                case 'bumbu':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-cyan-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-mortar-pestle text-cyan-500 text-7xl"></i>';
+                    break;
+                case 'kopi':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-amber-50', 'to-yellow-50');
+                    imageElement.innerHTML = '<i class="fas fa-coffee text-amber-500 text-7xl"></i>';
+                    break;
+                case 'biskuit':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-indigo-50', 'to-purple-50');
+                    imageElement.innerHTML = '<i class="fas fa-cookie text-indigo-500 text-7xl"></i>';
+                    break;
+                case 'permen':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-amber-50', 'to-yellow-50');
+                    imageElement.innerHTML = '<i class="fas fa-candy text-amber-500 text-7xl"></i>';
+                    break;
+                case 'mie':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-utensils text-blue-500 text-7xl"></i>';
+                    break;
+                case 'minyak':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-cyan-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-oil-can text-cyan-500 text-7xl"></i>';
+                    break;
+                case 'rokok':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-slate-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-smoking text-slate-500 text-7xl"></i>';
+                    break;
+                default:
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-box text-blue-500 text-7xl"></i>';
+            }
+        }
+
+        // Close product detail
+        closeProductDetail.addEventListener('click', () => {
+            productDetail.querySelector('.product-detail-content').classList.remove('translate-y-0');
+            productDetail.classList.remove('opacity-100');
+            setTimeout(() => {
+                productDetail.classList.add('hidden');
+            }, 300);
+        });
+
+        // Quantity controls
+        decreaseQuantity.addEventListener('click', () => {
+            if (quantity > 1) {
+                quantity--;
+                productQuantity.textContent = quantity;
+                if (currentProduct) {
+                    currentProduct.quantity = quantity;
+                }
+            }
+        });
+
+        increaseQuantity.addEventListener('click', () => {
+            quantity++;
+            productQuantity.textContent = quantity;
+            if (currentProduct) {
+                currentProduct.quantity = quantity;
+            }
+        });
+
+        // Cart functionality - PERBAIKAN UTAMA: Event listener untuk semua elemen keranjang
+        const cartIcons = document.querySelectorAll('.cart-icon');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const closeCart = document.getElementById('close-cart');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const cartCounts = document.querySelectorAll('.cart-count');
+        const whatsappCheckoutBtn = document.querySelector('.whatsapp-checkout-btn');
+
+        let cart = [];
+
+        // Open cart - PERBAIKAN: Event listener untuk semua ikon keranjang (desktop & mobile)
+        cartIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.stopPropagation(); // Mencegah event bubbling
+                cartSidebar.classList.remove('-right-96');
+                cartSidebar.classList.add('right-0');
+                cartOverlay.classList.remove('hidden');
+            });
+        });
+
+        // Close cart
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('right-0');
+            cartSidebar.classList.add('-right-96');
+            cartOverlay.classList.add('hidden');
+        });
+
+        // Close cart when overlay is clicked
+        cartOverlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('right-0');
+            cartSidebar.classList.add('-right-96');
+            cartOverlay.classList.add('hidden');
+        });
+
+        // Add to cart
+        addToCartBtn.addEventListener('click', () => {
+            if (currentProduct) {
+                addToCart(currentProduct);
+                
+                // Close product detail
+                productDetail.querySelector('.product-detail-content').classList.remove('translate-y-0');
+                productDetail.classList.remove('opacity-100');
+                setTimeout(() => {
+                    productDetail.classList.add('hidden');
+                }, 300);
+                
+                // Show notification
+                showNotification(`${currentProduct.name} ditambahkan ke keranjang`);
+            }
+        });
+
+        // WhatsApp Direct Order
+        whatsappDirectBtn.addEventListener('click', function() {
+            if (!currentProduct) return;
+            
+            const message = `🛒 *PESANAN CEPAT TOKO SEMBAKO ANTI* 🛒\n\n` +
+                           `Halo! Saya ingin memesan:\n\n` +
+                           `*${currentProduct.name}*\n` +
+                           `💰 Harga: Rp ${currentProduct.price.toLocaleString('id-ID')}\n` +
+                           `🔢 Jumlah: ${currentProduct.quantity}\n` +
+                           `➕ Subtotal: Rp ${(currentProduct.price * currentProduct.quantity).toLocaleString('id-ID')}\n\n` +
+                           `Silakan konfirmasi ketersediaan stock. Terima kasih! 😊\n\n` +
+                           `_Pesan ini dikirim via website Toko Sembako Anti_`;
+            
+            const phoneNumber = '6282213253954';
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+            
+            // Tutup modal
+            productDetail.querySelector('.product-detail-content').classList.remove('translate-y-0');
+            productDetail.classList.remove('opacity-100');
+            setTimeout(() => {
+                productDetail.classList.add('hidden');
+            }, 300);
+        });
+
+        // WhatsApp Checkout
+        whatsappCheckoutBtn.addEventListener('click', sendOrderToWhatsApp);
+
+        // WhatsApp Integration Function
+        function sendOrderToWhatsApp() {
+            if (cart.length === 0) {
+                showNotification('Keranjang belanja masih kosong', 'error');
+                return;
+            }
+
+            // Format pesan WhatsApp
+            let message = `🛒 *PESANAN TOKO SEMBAKO ANTI* 🛒\n\n`;
+            message += `Halo! Saya ingin memesan produk berikut:\n\n`;
+            
+            // Detail produk
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                message += `*${index + 1}. ${item.name}*\n`;
+                message += `   💰 Harga Satuan: Rp ${item.price.toLocaleString('id-ID')}\n`;
+                message += `   🔢 Jumlah: ${item.quantity} pcs\n`;
+                message += `   ➕ Subtotal: Rp ${itemTotal.toLocaleString('id-ID')}\n\n`;
+            });
+
+            // Total
+            const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            message += `═══════════════════\n`;
+            message += `💰 *TOTAL: Rp ${totalAmount.toLocaleString('id-ID')}*\n`;
+            message += `═══════════════════\n\n`;
+            message += `Silakan konfirmasi ketersediaan stock dan total yang harus dibayar. Terima kasih! 😊\n\n`;
+            message += `_Pesan ini dikirim via website Toko Sembako Anti_`;
+
+            // Nomor WhatsApp
+            const phoneNumber = '6282213253954';
+            
+            // Encode message untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Redirect ke WhatsApp
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+            
+            // Tutup cart sidebar
+            cartSidebar.classList.remove('right-0');
+            cartSidebar.classList.add('-right-96');
+            cartOverlay.classList.add('hidden');
+            
+            // Kosongkan keranjang setelah order
+            cart = [];
+            updateCart();
+        }
+
+        // Add product to cart
+        function addToCart(product) {
+            const existingProduct = cart.find(item => item.name === product.name);
+            
+            if (existingProduct) {
+                existingProduct.quantity += product.quantity;
+            } else {
+                cart.push({...product});
+            }
+            
+            updateCart();
+        }
+
+        // Update cart display
+        function updateCart() {
+            // Clear cart items
+            cartItems.innerHTML = '';
+            
+            let total = 0;
+            let itemCount = 0;
+            
+            // Add each item to cart
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                itemCount += item.quantity;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item flex items-center mb-4 pb-4 border-b border-slate-200';
+                cartItem.innerHTML = `
+                    <div class="cart-item-img w-14 h-14 rounded bg-slate-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-box text-slate-500"></i>
+                    </div>
+                    <div class="cart-item-details flex-1">
+                        <div class="cart-item-title font-semibold mb-1 text-slate-800">${item.name}</div>
+                        <div class="cart-item-price text-blue-500 font-semibold">Rp ${item.price.toLocaleString('id-ID')} x ${item.quantity}</div>
+                    </div>
+                    <div class="cart-item-actions flex items-center">
+                        <div class="decrease-cart-item quantity-btn w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer mx-1 hover:bg-slate-200 transition" data-product="${item.name}">-</div>
+                        <span class="mx-2 text-slate-700">${item.quantity}</span>
+                        <div class="increase-cart-item quantity-btn w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer mx-1 hover:bg-slate-200 transition" data-product="${item.name}">+</div>
+                    </div>
+                `;
+                
+                cartItems.appendChild(cartItem);
+            });
+            
+            // Update total and count
+            cartTotal.innerHTML = `
+                <span>Total:</span>
+                <span>Rp ${total.toLocaleString('id-ID')}</span>
+            `;
+            
+            // PERBAIKAN: Update semua indikator jumlah keranjang
+            cartCounts.forEach(count => {
+                count.textContent = itemCount;
+            });
+            
+            // Add event listeners to cart item buttons
+            document.querySelectorAll('.decrease-cart-item').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productName = e.target.getAttribute('data-product');
+                    decreaseCartItem(productName);
+                });
+            });
+            
+            document.querySelectorAll('.increase-cart-item').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productName = e.target.getAttribute('data-product');
+                    increaseCartItem(productName);
+                });
+            });
+        }
+
+        // Decrease cart item quantity
+        function decreaseCartItem(productName) {
+            const item = cart.find(item => item.name === productName);
+            
+            if (item) {
+                if (item.quantity > 1) {
+                    item.quantity--;
+                } else {
+                    cart = cart.filter(item => item.name !== productName);
+                }
+                
+                updateCart();
+            }
+        }
+
+        // Increase cart item quantity
+        function increaseCartItem(productName) {
+            const item = cart.find(item => item.name === productName);
+            
+            if (item) {
+                item.quantity++;
+                updateCart();
+            }
+        }
+
+        // Show notification
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            const bgColor = type === 'success' ? 'bg-green-500' : 'bg-red-500';
+            
+            notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

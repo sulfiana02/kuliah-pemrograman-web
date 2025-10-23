@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hitungan Bangun Ruang</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #333;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #2575fc;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+    }
+    
+    .bangun-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+    
+    .bangun {
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    
+    .bangun:hover {
+      transform: translateY(-5px);
+    }
+    
+    h2 {
+      color: #2575fc;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #2575fc;
+      font-size: 1.5rem;
+    }
+    
+    .input-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #2c3e50;
+    }
+    
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus {
+      border-color: #2575fc;
+      outline: none;
+    }
+    
+    button {
+      background-color: #2575fc;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #1a63cf;
+    }
+    
+    .hasil {
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #e8f4fc;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      color: #2575fc;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .shape-icon {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #2575fc;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .bangun-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hitungan Bangun Ruang</h1>
+    
+    <div class="bangun-container">
+      <!-- Kubus -->
+      <div class="bangun">
+        <div class="shape-icon">⬛</div>
+        <h2>Volume Kubus</h2>
+        <div class="input-group">
+          <label for="sisi">Sisi:</label>
+          <input type="number" id="sisi" placeholder="Masukkan panjang sisi">
+        </div>
+        <button onclick="hitungKubus()">Hitung Volume</button>
+        <div class="hasil" id="hasilKubus"></div>
+      </div>
+      
+      <!-- Balok -->
+      <div class="bangun">
+        <div class="shape-icon">📦</div>
+        <h2>Volume Balok</h2>
+        <div class="input-group">
+          <label for="panjang">Panjang:</label>
+          <input type="number" id="panjang" placeholder="Masukkan panjang">
+        </div>
+        <div class="input-group">
+          <label for="lebar">Lebar:</label>
+          <input type="number" id="lebar" placeholder="Masukkan lebar">
+        </div>
+        <div class="input-group">
+          <label for="tinggi">Tinggi:</label>
+          <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+        </div>
+        <button onclick="hitungBalok()">Hitung Volume</button>
+        <div class="hasil" id="hasilBalok"></div>
+      </div>
+      
+      <!-- Tabung -->
+      <div class="bangun">
+        <div class="shape-icon">🛢️</div>
+        <h2>Volume Tabung</h2>
+        <div class="input-group">
+          <label for="jari">Jari-jari:</label>
+          <input type="number" id="jari" placeholder="Masukkan jari-jari">
+        </div>
+        <div class="input-group">
+          <label for="tinggiTabung">Tinggi:</label>
+          <input type="number" id="tinggiTabung" placeholder="Masukkan tinggi">
+        </div>
+        <button onclick="hitungTabung()">Hitung Volume</button>
+        <div class="hasil" id="hasilTabung"></div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>Kalkulator Bangun Ruang &copy; 2023</p>
+    </div>
+  </div>
+
+  <script>
+    function hitungKubus() {
+      var s = parseFloat(document.getElementById("sisi").value);
+      if (isNaN(s)) {
+        document.getElementById("hasilKubus").innerHTML = "Masukkan nilai yang valid!";
+        return;
+      }
+      var volume = s * s * s;
+      document.getElementById("hasilKubus").innerHTML = 
+        `Volume Kubus = ${volume.toLocaleString()}`;
+    }
+
+    function hitungBalok() {
+      var p = parseFloat(document.getElementById("panjang").value);
+      var l = parseFloat(document.getElementById("lebar").value);
+      var t = parseFloat(document.getElementById("tinggi").value);
+      
+      if (isNaN(p) || isNaN(l) || isNaN(t)) {
+        document.getElementById("hasilBalok").innerHTML = "Masukkan nilai yang valid!";
+        return;
+      }
+      
+      var volume = p * l * t;
+      document.getElementById("hasilBalok").innerHTML = 
+        `Volume Balok = ${volume.toLocaleString()}`;
+    }
+
+    function hitungTabung() {
+      var r = parseFloat(document.getElementById("jari").value);
+      var t = parseFloat(document.getElementById("tinggiTabung").value);
+      
+      if (isNaN(r) || isNaN(t)) {
+        document.getElementById("hasilTabung").innerHTML = "Masukkan nilai yang valid!";
+        return;
+      }
+      
+      var volume = Math.PI * r * r * t;
+      document.getElementById("hasilTabung").innerHTML = 
+        `Volume Tabung = ${volume.toFixed(2).toLocaleString()}`;
+    }
+    
+    // Tambahkan event listener untuk mendukung keyboard (Enter key)
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          // Cari tombol berikutnya dan klik
+          const button = this.closest('.bangun').querySelector('button');
+          if (button) button.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
