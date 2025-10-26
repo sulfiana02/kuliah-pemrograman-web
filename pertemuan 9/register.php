@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Diary Harianku</title>
+    <title>Register - Personal Diary</title>
     <style>
         * {
             margin: 0;
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #87CEEB 0%, #B0E2FF 50%, #87CEEB 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
             min-height: 100vh;
             padding: 20px;
             display: flex;
@@ -54,268 +54,238 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             align-items: center;
         }
         .register-container {
-            background: linear-gradient(135deg, #E6F3FF, #D4EBFF);
+            background: rgba(52, 73, 94, 0.9);
             padding: 50px;
-            border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(0, 150, 255, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             width: 100%;
             max-width: 500px;
-            border: 3px solid #B0E2FF;
-            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
         .register-header {
+            text-align: center;
             margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .register-header h1 {
-            color: #1E90FF;
+            color: #ecf0f1;
             margin-bottom: 15px;
-            font-size: 2.5em;
-            background: linear-gradient(45deg, #1E90FF, #4169E1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2.2em;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
         .register-header p {
-            color: #4682B4;
+            color: #bdc3c7;
             font-size: 1.1em;
         }
         .form-group {
-            margin-bottom: 20px;
-            text-align: left;
+            margin-bottom: 25px;
         }
         label {
             display: block;
             margin-bottom: 8px;
-            color: #1E90FF;
-            font-weight: 600;
-            font-size: 1.1em;
+            color: #ecf0f1;
+            font-weight: 500;
+            font-size: 1em;
         }
         .form-control {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #B0E2FF;
-            border-radius: 15px;
-            font-size: 16px;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-size: 15px;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ecf0f1;
         }
         .form-control:focus {
             outline: none;
-            border-color: #1E90FF;
-            box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
-            background: white;
+            border-color: #3498db;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        .form-control::placeholder {
+            color: #95a5a6;
         }
         .btn-register {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(45deg, #1E90FF, #4169E1);
+            background: linear-gradient(45deg, #27ae60, #229954);
             color: white;
             border: none;
-            border-radius: 15px;
-            font-size: 18px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(30, 144, 255, 0.3);
             margin-bottom: 20px;
         }
         .btn-register:hover {
-            background: linear-gradient(45deg, #4169E1, #1E90FF);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+            background: linear-gradient(45deg, #229954, #27ae60);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
         }
         .btn-login {
             display: block;
             padding: 12px;
-            background: linear-gradient(45deg, #87CEFA, #B0E2FF);
-            color: #1E90FF;
+            background: rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
             text-decoration: none;
-            border-radius: 15px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 500;
             transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .btn-login:hover {
-            background: linear-gradient(45deg, #B0E2FF, #87CEFA);
+            background: rgba(255, 255, 255, 0.15);
+            color: #ecf0f1;
             transform: translateY(-2px);
         }
         .error {
-            background: linear-gradient(135deg, #FFE6E6, #FFCCCC);
-            color: #B22222;
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
             padding: 15px;
-            border-radius: 15px;
+            border-radius: 8px;
             margin-bottom: 25px;
-            border: 2px solid #FFCCCC;
+            border: 1px solid rgba(231, 76, 60, 0.3);
             text-align: center;
             font-weight: 500;
         }
         .success {
-            background: linear-gradient(135deg, #E6FFE6, #CCFFCC);
-            color: #228B22;
+            background: rgba(39, 174, 96, 0.2);
+            color: #27ae60;
             padding: 15px;
-            border-radius: 15px;
+            border-radius: 8px;
             margin-bottom: 25px;
-            border: 2px solid #CCFFCC;
+            border: 1px solid rgba(39, 174, 96, 0.3);
             text-align: center;
             font-weight: 500;
         }
-        /* Collection of Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+        .form-note {
+            color: #95a5a6;
+            font-size: 0.85em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .password-requirements {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border-left: 3px solid #3498db;
+        }
+        .password-requirements h4 {
+            color: #ecf0f1;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .password-requirements ul {
+            color: #bdc3c7;
+            font-size: 0.8em;
+            padding-left: 20px;
+        }
+        .password-requirements li {
+            margin-bottom: 3px;
+        }
 
-@keyframes slideInLeft {
-    from { transform: translateX(-100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInRight {
-    from { transform: translateX(100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.5); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes flip {
-    from { transform: rotateY(90deg); }
-    to { transform: rotateY(0deg); }
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-}
-
-/* Utility classes for animations */
-.animate-fadeIn { animation: fadeIn 1s ease-out; }
-.animate-slideInLeft { animation: slideInLeft 0.8s ease-out; }
-.animate-slideInRight { animation: slideInRight 0.8s ease-out; }
-.animate-zoomIn { animation: zoomIn 0.6s ease-out; }
-.animate-flip { animation: flip 0.8s ease-out; }
-.animate-shake { animation: shake 0.5s ease-in-out; }
+        @media (max-width: 768px) {
+            .register-container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+        }
     </style>
-    <style>
-    /* Animasi untuk container */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-    }
-
-    @keyframes glow {
-        0%, 100% {
-            box-shadow: 0 20px 40px rgba(0, 150, 255, 0.3);
-        }
-        50% {
-            box-shadow: 0 20px 40px rgba(0, 150, 255, 0.6);
-        }
-    }
-
-    .login-container {
-        animation: fadeInUp 0.8s ease-out;
-    }
-
-    .login-container:hover {
-        animation: glow 2s ease-in-out infinite;
-    }
-
-    .btn-login, .btn-register {
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-
-    .btn-login::before, .btn-register::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        transition: left 0.5s;
-    }
-
-    .btn-login:hover::before, .btn-register:hover::before {
-        left: 100%;
-    }
-
-    /* Animasi untuk input fields */
-    .form-control {
-        transition: all 0.3s ease;
-    }
-
-    .form-control:focus {
-        transform: scale(1.02);
-    }
-
-    /* Animasi untuk header */
-    .login-header h1 {
-        animation: float 3s ease-in-out infinite;
-    }
-</style>
 </head>
 <body>
     <div class="register-container">
         <div class="register-header">
-            <h1>🌟 Register</h1>
-            <p>Buat akun diary barumu 🌊</p>
+            <h1>Buat Akun Baru</h1>
+            <p>Mulai catat perjalanan hidupmu</p>
         </div>
 
         <?php if (isset($error)): ?>
-            <div class="error">❌ <?php echo $error; ?></div>
+            <div class="error"><?php echo $error; ?></div>
         <?php endif; ?>
 
         <?php if (isset($success)): ?>
-            <div class="success">✅ <?php echo $success; ?></div>
+            <div class="success"><?php echo $success; ?></div>
         <?php endif; ?>
 
         <form method="POST" action="">
             <div class="form-group">
-                <label for="nama_lengkap">👩‍💼 Nama Lengkap:</label>
+                <label for="nama_lengkap">Nama Lengkap</label>
                 <input type="text" id="nama_lengkap" name="nama_lengkap" required 
-                       placeholder="Masukkan nama lengkap..." class="form-control">
+                       placeholder="Masukkan nama lengkap Anda" class="form-control" autofocus>
             </div>
 
             <div class="form-group">
-                <label for="username">👤 Username:</label>
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" required 
-                       placeholder="Buat username..." class="form-control">
+                       placeholder="Pilih username unik" class="form-control">
+                <div class="form-note">Minimal 3 karakter, huruf dan angka saja</div>
             </div>
 
             <div class="form-group">
-                <label for="email">📧 Email:</label>
+                <label for="email">Alamat Email</label>
                 <input type="email" id="email" name="email" 
-                       placeholder="Masukkan email (opsional)..." class="form-control">
+                       placeholder="email@contoh.com (opsional)" class="form-control">
+                <div class="form-note">Opsional - untuk pemulihan akun</div>
             </div>
 
             <div class="form-group">
-                <label for="password">🔒 Password:</label>
+                <label for="password">Password</label>
                 <input type="password" id="password" name="password" required 
-                       placeholder="Buat password..." class="form-control" minlength="6">
+                       placeholder="Buat password yang kuat" class="form-control" minlength="6">
+                
+                <div class="password-requirements">
+                    <h4>Persyaratan Password:</h4>
+                    <ul>
+                        <li>Minimal 6 karakter</li>
+                        <li>Disarankan kombinasi huruf dan angka</li>
+                    </ul>
+                </div>
             </div>
 
-            <button type="submit" class="btn-register">🌊 Daftar Sekarang</button>
+            <button type="submit" class="btn-register">Daftar Sekarang</button>
             
             <a href="login.php" class="btn-login">← Sudah punya akun? Login di sini</a>
         </form>
     </div>
+
+    <script>
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value;
+            
+            if (password.length < 6) {
+                e.preventDefault();
+                alert('Password harus minimal 6 karakter');
+                return;
+            }
+            
+            if (username.length < 3) {
+                e.preventDefault();
+                alert('Username harus minimal 3 karakter');
+                return;
+            }
+        });
+
+        // Auto-hide messages after 5 seconds
+        setTimeout(function() {
+            const messages = document.querySelectorAll('.error, .success');
+            messages.forEach(msg => {
+                if (msg) {
+                    msg.style.opacity = '0';
+                    msg.style.transform = 'translateY(-20px)';
+                    setTimeout(() => msg.remove(), 500);
+                }
+            });
+        }, 5000);
+    </script>
 </body>
 </html>

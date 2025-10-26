@@ -32,12 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Diary Harianku</title>
+    <title>Login - Personal Diary</title>
     <style>
         * {
             margin: 0;
@@ -46,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #87CEEB 0%, #B0E2FF 50%, #87CEEB 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
             min-height: 100vh;
             padding: 20px;
             display: flex;
@@ -54,28 +55,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             align-items: center;
         }
         .login-container {
-            background: linear-gradient(135deg, #E6F3FF, #D4EBFF);
+            background: rgba(52, 73, 94, 0.9);
             padding: 50px;
-            border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(0, 150, 255, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             width: 100%;
             max-width: 450px;
-            border: 3px solid #B0E2FF;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
+            backdrop-filter: blur(10px);
         }
         .login-header {
             margin-bottom: 40px;
         }
         .login-header h1 {
-            color: #1E90FF;
+            color: #ecf0f1;
             margin-bottom: 15px;
             font-size: 2.5em;
-            background: linear-gradient(45deg, #1E90FF, #4169E1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
         .login-header p {
-            color: #4682B4;
+            color: #bdc3c7;
             font-size: 1.1em;
         }
         .form-group {
@@ -85,210 +86,113 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         label {
             display: block;
             margin-bottom: 8px;
-            color: #1E90FF;
-            font-weight: 600;
+            color: #ecf0f1;
+            font-weight: 500;
             font-size: 1.1em;
         }
         .form-control {
             width: 100%;
             padding: 15px;
-            border: 2px solid #B0E2FF;
-            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
             font-size: 16px;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ecf0f1;
         }
         .form-control:focus {
             outline: none;
-            border-color: #1E90FF;
-            box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
-            background: white;
+            border-color: #3498db;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .form-control::placeholder {
+            color: #bdc3c7;
         }
         .btn-login {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(45deg, #1E90FF, #4169E1);
+            background: linear-gradient(45deg, #3498db, #2980b9);
             color: white;
             border: none;
-            border-radius: 15px;
-            font-size: 18px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(30, 144, 255, 0.3);
             margin-bottom: 20px;
         }
         .btn-login:hover {
-            background: linear-gradient(45deg, #4169E1, #1E90FF);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
         }
         .btn-register {
             display: block;
             padding: 12px;
-            background: linear-gradient(45deg, #87CEFA, #B0E2FF);
-            color: #1E90FF;
+            background: rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
             text-decoration: none;
-            border-radius: 15px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 500;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .btn-register:hover {
-            background: linear-gradient(45deg, #B0E2FF, #87CEFA);
+            background: rgba(255, 255, 255, 0.15);
+            color: #ecf0f1;
             transform: translateY(-2px);
         }
         .error {
-            background: linear-gradient(135deg, #FFE6E6, #FFCCCC);
-            color: #B22222;
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
             padding: 15px;
-            border-radius: 15px;
+            border-radius: 8px;
             margin-bottom: 25px;
-            border: 2px solid #FFCCCC;
+            border: 1px solid rgba(231, 76, 60, 0.3);
             text-align: center;
             font-weight: 500;
         }
-        /* Collection of Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInLeft {
-    from { transform: translateX(-100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInRight {
-    from { transform: translateX(100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.5); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes flip {
-    from { transform: rotateY(90deg); }
-    to { transform: rotateY(0deg); }
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-}
-
-/* Utility classes for animations */
-.animate-fadeIn { animation: fadeIn 1s ease-out; }
-.animate-slideInLeft { animation: slideInLeft 0.8s ease-out; }
-.animate-slideInRight { animation: slideInRight 0.8s ease-out; }
-.animate-zoomIn { animation: zoomIn 0.6s ease-out; }
-.animate-flip { animation: flip 0.8s ease-out; }
-.animate-shake { animation: shake 0.5s ease-in-out; }
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+        }
     </style>
-    <style>
-    /* Animasi untuk container */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-    }
-
-    @keyframes glow {
-        0%, 100% {
-            box-shadow: 0 20px 40px rgba(0, 150, 255, 0.3);
-        }
-        50% {
-            box-shadow: 0 20px 40px rgba(0, 150, 255, 0.6);
-        }
-    }
-
-    .login-container {
-        animation: fadeInUp 0.8s ease-out;
-    }
-
-    .login-container:hover {
-        animation: glow 2s ease-in-out infinite;
-    }
-
-    .btn-login, .btn-register {
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-
-    .btn-login::before, .btn-register::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        transition: left 0.5s;
-    }
-
-    .btn-login:hover::before, .btn-register:hover::before {
-        left: 100%;
-    }
-
-    /* Animasi untuk input fields */
-    .form-control {
-        transition: all 0.3s ease;
-    }
-
-    .form-control:focus {
-        transform: scale(1.02);
-    }
-
-    /* Animasi untuk header */
-    .login-header h1 {
-        animation: float 3s ease-in-out infinite;
-    }
-</style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-header">
-            <h1>🔐 Login</h1>
-            <p>Masuk ke Diary Harianmu 🌊</p>
+            <h1>Login</h1>
+            <p>Masuk ke Personal Diary Anda</p>
         </div>
 
         <?php if (isset($error)): ?>
-            <div class="error">❌ <?php echo $error; ?></div>
+            <div class="error"><?php echo $error; ?></div>
         <?php endif; ?>
+
+        <div class="info-box">
+            <p>Belum punya akun? Silakan daftar terlebih dahulu.</p>
+        </div>
 
         <form method="POST" action="">
             <div class="form-group">
-                <label for="username">👤 Username:</label>
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" required 
-                       placeholder="Masukkan username..." class="form-control">
+                       placeholder="Masukkan username" class="form-control" autofocus>
             </div>
 
             <div class="form-group">
-                <label for="password">🔒 Password:</label>
+                <label for="password">Password</label>
                 <input type="password" id="password" name="password" required 
-                       placeholder="Masukkan password..." class="form-control">
+                       placeholder="Masukkan password" class="form-control">
             </div>
 
-            <button type="submit" class="btn-login">🌊 Masuk ke Diary</button>
+            <button type="submit" class="btn-login">Masuk</button>
             
-            <a href="register.php" class="btn-register">🌟 Belum punya akun? Daftar di sini</a>
+            <a href="register.php" class="btn-register">Belum punya akun? Daftar di sini</a>
         </form>
     </div>
 </body>
