@@ -85,24 +85,6 @@
                 margin-right: 8px;
             }
         }
-        .product-image {
-            width: 100%;
-            height: 128px;
-            object-fit: contain;
-            border-radius: 0.5rem;
-        }
-        .product-detail-image {
-            width: 100%;
-            height: 256px;
-            object-fit: contain;
-            border-radius: 0.5rem;
-        }
-        .cart-item-image {
-            width: 56px;
-            height: 56px;
-            object-fit: contain;
-            border-radius: 0.375rem;
-        }
     </style>
 </head>
 <body class="bg-slate-50 font-inter">
@@ -179,44 +161,44 @@
             <div class="mb-16" id="shampo">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Shampo</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Rejoice" data-price="10000" data-category="shampo" data-image="rejoice.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Rejoice" data-price="10000" data-category="shampo">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/rejoice.jpeg" alt="Rejoice" class="product-image">
+                            <i class="fas fa-pump-soap text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Rejoice</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sunsilk" data-price="10000" data-category="shampo" data-image="sunsilk.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sunsilk" data-price="10000" data-category="shampo">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/sunsilk.jpeg" alt="Sunsilk" class="product-image">
+                            <i class="fas fa-pump-soap text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Sunsilk</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Head & Shoulders" data-price="10000" data-category="shampo" data-image="head-shoulders.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Head & Shoulders" data-price="10000" data-category="shampo">
                         <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/head shoulders.jpeg" alt="Head & Shoulders" class="product-image">
+                            <i class="fas fa-pump-soap text-indigo-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Head & Shoulders</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lifebuoy" data-price="5000" data-category="shampo" data-image="lifebuoy.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lifebuoy" data-price="5000" data-category="shampo">
                         <div class="h-32 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/lifebuoy.jpeg" alt="Lifebuoy" class="product-image">
+                            <i class="fas fa-pump-soap text-sky-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Lifebuoy</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Zinc" data-price="8000" data-category="shampo" data-image="zinc.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Zinc" data-price="8000" data-category="shampo">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/zinc.jpeg" alt="Zinc" class="product-image">
+                            <i class="fas fa-pump-soap text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Zinc</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 8.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Pantene" data-price="12000" data-category="shampo" data-image="pantene.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Pantene" data-price="12000" data-category="shampo">
                         <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/pantene.jpeg" alt="Pantene" class="product-image">
+                            <i class="fas fa-pump-soap text-indigo-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Pantene</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 12.000</div>
@@ -228,37 +210,37 @@
             <div class="mb-16" id="sabun">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Sabun Mandi</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Nuvo" data-price="4000" data-category="sabun" data-image="nuvo.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Nuvo" data-price="4000" data-category="sabun">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/nuvo.jpeg" alt="Nuvo" class="product-image">
+                            <i class="fas fa-soap text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Nuvo</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 4.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Shinzui" data-price="5000" data-category="sabun" data-image="shinzui.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Shinzui" data-price="5000" data-category="sabun">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-sky-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/shinzui.jpeg" alt="Shinzui" class="product-image">
+                            <i class="fas fa-soap text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Shinzui</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Giv" data-price="5000" data-category="sabun" data-image="giv.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Giv" data-price="5000" data-category="sabun">
                         <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/giv.jpeg" alt="Giv" class="product-image">
+                            <i class="fas fa-soap text-indigo-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Giv</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lervia" data-price="5000" data-category="sabun" data-image="lervia.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lervia" data-price="5000" data-category="sabun">
                         <div class="h-32 bg-gradient-to-br from-violet-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/lervia.jpeg" alt="Lervia" class="product-image">
+                            <i class="fas fa-soap text-violet-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Lervia</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lifebuoy Sabun" data-price="4500" data-category="sabun" data-image="lifebuoy-sabun.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lifebuoy Sabun" data-price="4500" data-category="sabun">
                         <div class="h-32 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/sabun lifebuoy.jpeg" alt="Lifebuoy" class="product-image">
+                            <i class="fas fa-soap text-sky-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Lifebuoy</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 4.500</div>
@@ -270,51 +252,51 @@
             <div class="mb-16">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Sabun Cuci Pakaian</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Daia" data-price="12000" data-category="sabun-cuci" data-image="daia.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Daia" data-price="12000" data-category="sabun-cuci">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/daia.jpeg" alt="Daia" class="product-image">
+                            <i class="fas fa-pump-soap text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Daia</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 12.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Boom" data-price="11000" data-category="sabun-cuci" data-image="boom.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Boom" data-price="11000" data-category="sabun-cuci">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-sky-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/boom.jpeg" alt="Boom" class="product-image">
+                            <i class="fas fa-pump-soap text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Boom</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 11.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sayang" data-price="10000" data-category="sabun-cuci" data-image="sayang.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sayang" data-price="10000" data-category="sabun-cuci">
                         <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/sayang.jpeg" alt="Sayang" class="product-image">
+                            <i class="fas fa-pump-soap text-indigo-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Sayang</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Gentle Gen" data-price="13000" data-category="sabun-cuci" data-image="gentle-gen.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Gentle Gen" data-price="13000" data-category="sabun-cuci">
                         <div class="h-32 bg-gradient-to-br from-violet-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/gentle-gen.jpeg" alt="Gentle Gen" class="product-image">
+                            <i class="fas fa-pump-soap text-violet-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Gentle Gen</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 13.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Rinso" data-price="15000" data-category="sabun-cuci" data-image="rinso.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Rinso" data-price="15000" data-category="sabun-cuci">
                         <div class="h-32 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/rinso.jpeg" alt="Rinso" class="product-image">
+                            <i class="fas fa-pump-soap text-sky-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Rinso</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 15.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Downy" data-price="18000" data-category="sabun-cuci" data-image="downy.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Downy" data-price="18000" data-category="sabun-cuci">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/downy.jpeg" alt="Downy" class="product-image">
+                            <i class="fas fa-pump-soap text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Downy</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 18.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Molto" data-price="16000" data-category="sabun-cuci" data-image="molto.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Molto" data-price="16000" data-category="sabun-cuci">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-sky-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/molto.jpeg" alt="Molto" class="product-image">
+                            <i class="fas fa-pump-soap text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Molto</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 16.000</div>
@@ -326,16 +308,16 @@
             <div class="mb-16">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Obat Nyamuk</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Nomos" data-price="8000" data-category="obat-nyamuk" data-image="nomos.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Nomos" data-price="8000" data-category="obat-nyamuk">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/nomos.jpeg" alt="Nomos" class="product-image">
+                            <i class="fas fa-bug text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Nomos</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 8.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Vape" data-price="12000" data-category="obat-nyamuk" data-image="vape.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Vape" data-price="12000" data-category="obat-nyamuk">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/vape.jpeg" alt="Vape" class="product-image">
+                            <i class="fas fa-bug text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Vape</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 12.000</div>
@@ -347,33 +329,47 @@
             <div class="mb-16" id="bumbu">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Bumbu Dapur</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Ladaku" data-price="11000" data-category="bumbu" data-image="ladaku.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Ladaku" data-price="11000" data-category="bumbu">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/ladaku.jpeg" alt="Ladaku" class="product-image">
+                            <i class="fas fa-pepper-hot text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Ladaku</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 11.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Garam" data-price="5000" data-category="bumbu" data-image="garam.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Garam" data-price="5000" data-category="bumbu">
                         <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/garam.jpeg" alt="Garam" class="product-image">
+                            <i class="fas fa-mortar-pestle text-slate-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Garam</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Miwon" data-price="5000" data-category="bumbu" data-image="miwon.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Miwon" data-price="5000" data-category="bumbu">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/miwon.jpeg" alt="Miwon" class="product-image">
+                            <i class="fas fa-star text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Miwon</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kecap ABC" data-price="7000" data-category="bumbu" data-image="kecap-abc.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kecap ABC" data-price="7000" data-category="bumbu">
                         <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/kecap abc.jpeg" alt="Kecap ABC" class="product-image">
+                            <i class="fas fa-jug text-indigo-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Kecap ABC</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 7.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Saus Sambal" data-price="8000" data-category="bumbu">
+                        <div class="h-32 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-pepper-hot text-sky-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Saus Sambal</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 8.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kecap Cengkeh" data-price="9000" data-category="bumbu">
+                        <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-jug text-blue-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Kecap Cengkeh</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 9.000</div>
                     </div>
                 </div>
             </div>
@@ -382,16 +378,16 @@
             <div class="mb-16" id="kopi">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Kopi</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kopi Uang Emas" data-price="15000" data-category="kopi" data-image="kopi-uang-emas.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kopi Uang Emas" data-price="15000" data-category="kopi">
                         <div class="h-32 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/uang emas.jpeg" alt="Kopi Uang Emas" class="product-image">
+                            <i class="fas fa-coffee text-amber-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Kopi Uang Emas</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 15.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kopi Gula Aren" data-price="18000" data-category="kopi" data-image="kopi-gula-aren.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kopi Gula Aren" data-price="18000" data-category="kopi">
                         <div class="h-32 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/gula aren.jpeg" alt="Kopi Gula Aren" class="product-image">
+                            <i class="fas fa-coffee text-amber-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Kopi Gula Aren</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 18.000</div>
@@ -403,37 +399,37 @@
             <div class="mb-16">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Biskuit</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Roma Kelapa" data-price="9000" data-category="biskuit" data-image="roma-kelapa.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Roma Kelapa" data-price="9000" data-category="biskuit">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/roma kelapa.jpeg" alt="Roma Kelapa" class="product-image">
+                            <i class="fas fa-cookie text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Roma Kelapa</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 9.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Roma Sandwich" data-price="7000" data-category="biskuit" data-image="roma-sandwich.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Roma Sandwich" data-price="7000" data-category="biskuit">
                         <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/roma sandwich.jpeg" alt="Roma Sandwich" class="product-image">
+                            <i class="fas fa-cookie text-indigo-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Roma Sandwich</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 7.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Pyramid" data-price="7000" data-category="biskuit" data-image="pyramid.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Pyramid" data-price="7000" data-category="biskuit">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/pyramid.jpeg" alt="Pyramid" class="product-image">
+                            <i class="fas fa-cookie text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Pyramid</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 7.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Bon Bon" data-price="5000" data-category="biskuit" data-image="bon-bon.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Bon Bon" data-price="5000" data-category="biskuit">
                         <div class="h-32 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/bon bon.jpeg" alt="Bon Bon" class="product-image">
+                            <i class="fas fa-cookie text-sky-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Bon Bon</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Nabati" data-price="6000" data-category="biskuit" data-image="nabati.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Nabati" data-price="6000" data-category="biskuit">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/nabati.jpeg" alt="Nabati" class="product-image">
+                            <i class="fas fa-cookie text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Nabati</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 6.000</div>
@@ -445,30 +441,30 @@
             <div class="mb-16">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Permen</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kopiko" data-price="3000" data-category="permen" data-image="kopiko.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kopiko" data-price="3000" data-category="permen">
                         <div class="h-32 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/kopiko.jpeg" alt="Kopiko" class="product-image">
+                            <i class="fas fa-candy text-amber-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Kopiko</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 3.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Relaxa" data-price="2500" data-category="permen" data-image="relaxa.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Relaxa" data-price="2500" data-category="permen">
                         <div class="h-32 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/relaxa.jpeg" alt="Relaxa" class="product-image">
+                            <i class="fas fa-candy text-amber-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Relaxa</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 2.500</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Babol" data-price="2000" data-category="permen" data-image="babol.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Babol" data-price="2000" data-category="permen">
                         <div class="h-32 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/babol.jpeg" alt="Babol" class="product-image">
+                            <i class="fas fa-candy text-amber-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Babol</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 2.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mentos" data-price="4000" data-category="permen" data-image="mentos.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mentos" data-price="4000" data-category="permen">
                         <div class="h-32 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/mentos.jpeg" alt="Mentos" class="product-image">
+                            <i class="fas fa-candy text-amber-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Mentos</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 4.000</div>
@@ -480,37 +476,37 @@
             <div class="mb-16" id="mie">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Mie Instan</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sedap Goreng" data-price="3000" data-category="mie" data-image="sedap-goreng.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sedap Goreng" data-price="3000" data-category="mie">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/sedap goreng.jpeg" alt="Sedap Goreng" class="product-image">
+                            <i class="fas fa-utensils text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Sedap Goreng</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 3.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Indomie" data-price="3000" data-category="mie" data-image="indomie.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Indomie" data-price="3000" data-category="mie">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/indomie.jpeg" alt="Indomie" class="product-image">
+                            <i class="fas fa-utensils text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Indomie</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 3.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sedap Kari" data-price="3000" data-category="mie" data-image="sedap-kari.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sedap Kari" data-price="3000" data-category="mie">
                         <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/sedap kari.jpeg" alt="Sedap Kari" class="product-image">
+                            <i class="fas fa-utensils text-indigo-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Sedap Kari</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 3.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sedap Soto" data-price="3000" data-category="mie" data-image="sedap-soto.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sedap Soto" data-price="3000" data-category="mie">
                         <div class="h-32 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/sedap soto.jpeg" alt="Sedap Soto" class="product-image">
+                            <i class="fas fa-utensils text-sky-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Sedap Soto</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 3.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mie Eko" data-price="2500" data-category="mie" data-image="mie-eko.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mie Eko" data-price="2500" data-category="mie">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/mie eko.jpeg" alt="Mie Eko" class="product-image">
+                            <i class="fas fa-utensils text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Mie Eko</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 2.500</div>
@@ -522,16 +518,16 @@
             <div class="mb-16">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Minyak Goreng</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Minyak Kita 2 Liter" data-price="38000" data-category="minyak" data-image="minyak-kita.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Minyak Kita 2 Liter" data-price="38000" data-category="minyak">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/minyak kita.jpeg" alt="Minyak Kita 2 Liter" class="product-image">
+                            <i class="fas fa-oil-can text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Minyak Kita 2 Liter</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 38.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sovia 2 Liter" data-price="48000" data-category="minyak" data-image="sovia.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sovia 2 Liter" data-price="48000" data-category="minyak">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/sovia.jpeg" alt="Sovia 2 Liter" class="product-image">
+                            <i class="fas fa-oil-can text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Sovia 2 Liter</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 48.000</div>
@@ -543,44 +539,65 @@
             <div class="mb-16">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Rokok</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="A Mild" data-price="32000" data-category="rokok" data-image="a-mild.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="A Mild" data-price="32000" data-category="rokok">
                         <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/a mild.jpeg" alt="A Mild" class="product-image">
+                            <i class="fas fa-smoking text-slate-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">A Mild</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 32.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Class Mild" data-price="30000" data-category="rokok" data-image="class-mild.jpeg">
+                    <div class="product-card bg-white rounded-xl shadowSm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Class Mild" data-price="30000" data-category="rokok">
                         <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/class mild.jpeg" alt="Class Mild" class="product-image">
+                            <i class="fas fa-smoking text-slate-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Class Mild</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 30.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Surya" data-price="28000" data-category="rokok" data-image="surya.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Surya" data-price="28000" data-category="rokok">
                         <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/surya.jpeg" alt="Surya" class="product-image">
+                            <i class="fas fa-smoking text-slate-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Surya</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 28.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Gudang Garam Merah" data-price="31000" data-category="rokok" data-image="gudang-garam-merah.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="BMW" data-price="25000" data-category="rokok">
                         <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/gudang garam.jpeg" alt="Gudang Garam Merah" class="product-image">
+                            <i class="fas fa-smoking text-slate-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">BMW</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 25.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Niu" data-price="27000" data-category="rokok">
+                        <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-smoking text-slate-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Niu</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 27.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Red Bold" data-price="29000" data-category="rokok">
+                        <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-smoking text-slate-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Red Bold</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 29.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Gudang Garam Merah" data-price="31000" data-category="rokok">
+                        <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-smoking text-slate-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Gudang Garam Merah</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 31.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Malboro Hitam" data-price="35000" data-category="rokok" data-image="malboro-hitam.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Malboro Hitam" data-price="35000" data-category="rokok">
                         <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/malboro.jpeg" alt="Malboro Hitam" class="product-image">
+                            <i class="fas fa-smoking text-slate-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Malboro Hitam</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 35.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="L.A" data-price="26000" data-category="rokok" data-image="la.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="L.A" data-price="26000" data-category="rokok">
                         <div class="h-32 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/LA.jpeg" alt="L.A" class="product-image">
+                            <i class="fas fa-smoking text-slate-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">L.A</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 26.000</div>
@@ -592,23 +609,30 @@
             <div class="mb-16" id="pencuci-piring">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Pencuci Piring</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Ekonomi" data-price="6000" data-category="pencuci-piring" data-image="ekonomi.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Gowosh" data-price="8000" data-category="pencuci-piring">
+                        <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-soap text-blue-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Gowosh</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 8.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Ekonomi" data-price="6000" data-category="pencuci-piring">
                         <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/ekonomi.jpeg" alt="Ekonomi" class="product-image">
+                            <i class="fas fa-soap text-cyan-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Ekonomi</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 6.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sunglith" data-price="9000" data-category="pencuci-piring" data-image="sunglith.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sunglith" data-price="9000" data-category="pencuci-piring">
                         <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/sunglith.jpeg" alt="Sunglith" class="product-image">
+                            <i class="fas fa-soap text-indigo-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Sunglith</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 9.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mama Lemon" data-price="12000" data-category="pencuci-piring" data-image="mama-lemon.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mama Lemon" data-price="12000" data-category="pencuci-piring">
                         <div class="h-32 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/mama lemon.jpeg" alt="Mama Lemon" class="product-image">
+                            <i class="fas fa-soap text-green-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Mama Lemon</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 12.000</div>
@@ -620,79 +644,79 @@
             <div class="mb-16" id="minuman">
                 <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Minuman</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Golda" data-price="5000" data-category="minuman" data-image="golda.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Golda" data-price="5000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/golda.jpeg" alt="Golda" class="product-image">
+                            <i class="fas fa-wine-bottle text-yellow-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Golda</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mizone" data-price="7000" data-category="minuman" data-image="mizone.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mizone" data-price="7000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/mizone.jpeg" alt="Mizone" class="product-image">
+                            <i class="fas fa-wine-bottle text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Mizone</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 7.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Teh Pucuk" data-price="5000" data-category="minuman" data-image="teh-pucuk.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Teh Pucuk" data-price="5000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/teh pucuk.jpeg" alt="Teh Pucuk" class="product-image">
+                            <i class="fas fa-wine-bottle text-green-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Teh Pucuk</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Floridina" data-price="6000" data-category="minuman" data-image="floridina.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Floridina" data-price="6000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-orange-50 to-red-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/floridina.jpeg" alt="Floridina" class="product-image">
+                            <i class="fas fa-wine-bottle text-orange-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Floridina</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 6.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Milku" data-price="8000" data-category="minuman" data-image="milku.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Milku" data-price="8000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/milku.jpeg" alt="Milku" class="product-image">
+                            <i class="fas fa-wine-bottle text-purple-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Milku</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 8.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sprait" data-price="7000" data-category="minuman" data-image="sprite.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sprait" data-price="7000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-green-50 to-lime-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/sprite.jpeg" alt="Sprait" class="product-image">
+                            <i class="fas fa-wine-bottle text-green-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Sprait</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 7.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Fanta" data-price="7000" data-category="minuman" data-image="fanta.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Fanta" data-price="7000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/fanta.jpeg" alt="Fanta" class="product-image">
+                            <i class="fas fa-wine-bottle text-orange-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Fanta</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 7.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kopikap" data-price="3000" data-category="minuman" data-image="kopikap.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kopikap" data-price="3000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/kopikap.jpeg" alt="Kopikap" class="product-image">
+                            <i class="fas fa-coffee text-amber-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Kopikap</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 3.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Teh Rio" data-price="4000" data-category="minuman" data-image="teh-rio.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Teh Rio" data-price="4000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/teh rio.jpeg" alt="Teh Rio" class="product-image">
+                            <i class="fas fa-wine-bottle text-green-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Teh Rio</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 4.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mountea" data-price="5000" data-category="minuman" data-image="mountea.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Mountea" data-price="5000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-green-50 to-teal-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/mountea.jpeg" alt="Mountea" class="product-image">
+                            <i class="fas fa-wine-bottle text-green-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Mountea</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Power F" data-price="8000" data-category="minuman" data-image="power-f.jpeg">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Power F" data-price="8000" data-category="minuman">
                         <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
-                            <img src="image/power f.jpeg" alt="Power F" class="product-image">
+                            <i class="fas fa-wine-bottle text-blue-500 text-5xl"></i>
                         </div>
                         <h4 class="font-semibold text-lg text-slate-800">Power F</h4>
                         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 8.000</div>
@@ -733,7 +757,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex items-center justify-center">
                     <div class="h-64 w-64 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg flex items-center justify-center" id="product-image">
-                        <img src="" alt="" class="product-detail-image" id="product-detail-img">
+                        <i class="fas fa-pump-soap text-blue-500 text-7xl"></i>
                     </div>
                 </div>
                 <div>
@@ -798,7 +822,7 @@
         const productName = document.getElementById('product-name');
         const productPrice = document.getElementById('product-price');
         const productDescription = document.getElementById('product-description');
-        const productImage = document.getElementById('product-detail-img');
+        const productImage = document.getElementById('product-image');
         const productQuantity = document.getElementById('product-quantity');
         const decreaseQuantity = document.getElementById('decrease-quantity');
         const increaseQuantity = document.getElementById('increase-quantity');
@@ -814,16 +838,14 @@
                 const product = card.getAttribute('data-product');
                 const price = card.getAttribute('data-price');
                 const category = card.getAttribute('data-category');
-                const image = card.getAttribute('data-image');
                 
                 // Set product details
                 productName.textContent = product;
                 productPrice.textContent = `Rp ${parseInt(price).toLocaleString('id-ID')}`;
                 productDescription.textContent = `Deskripsi untuk ${product}. Produk berkualitas dengan harga terjangkau.`;
                 
-                // Update product image
-                productImage.src = `image/${image}`;
-                productImage.alt = product;
+                // Update product image based on category
+                updateProductImage(category, productImage);
                 
                 // Reset quantity
                 quantity = 1;
@@ -834,8 +856,7 @@
                     name: product,
                     price: parseInt(price),
                     quantity: quantity,
-                    category: category,
-                    image: image
+                    category: category
                 };
                 
                 // Show product detail with animation
@@ -846,6 +867,71 @@
                 }, 10);
             });
         });
+
+        // Update product image based on category
+        function updateProductImage(category, imageElement) {
+            // Clear existing classes
+            imageElement.className = 'h-64 w-64 rounded-lg flex items-center justify-center';
+            
+            // Set gradient and icon based on category
+            switch(category) {
+                case 'shampo':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-pump-soap text-blue-500 text-7xl"></i>';
+                    break;
+                case 'sabun':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-cyan-50');
+                    imageElement.innerHTML = '<i class="fas fa-soap text-blue-500 text-7xl"></i>';
+                    break;
+                case 'sabun-cuci':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-cyan-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-pump-soap text-cyan-500 text-7xl"></i>';
+                    break;
+                case 'obat-nyamuk':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-bug text-blue-500 text-7xl"></i>';
+                    break;
+                case 'bumbu':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-cyan-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-mortar-pestle text-cyan-500 text-7xl"></i>';
+                    break;
+                case 'kopi':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-amber-50', 'to-yellow-50');
+                    imageElement.innerHTML = '<i class="fas fa-coffee text-amber-500 text-7xl"></i>';
+                    break;
+                case 'biskuit':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-indigo-50', 'to-purple-50');
+                    imageElement.innerHTML = '<i class="fas fa-cookie text-indigo-500 text-7xl"></i>';
+                    break;
+                case 'permen':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-amber-50', 'to-yellow-50');
+                    imageElement.innerHTML = '<i class="fas fa-candy text-amber-500 text-7xl"></i>';
+                    break;
+                case 'mie':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-utensils text-blue-500 text-7xl"></i>';
+                    break;
+                case 'minyak':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-cyan-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-oil-can text-cyan-500 text-7xl"></i>';
+                    break;
+                case 'rokok':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-slate-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-smoking text-slate-500 text-7xl"></i>';
+                    break;
+                case 'pencuci-piring':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-cyan-50');
+                    imageElement.innerHTML = '<i class="fas fa-soap text-blue-500 text-7xl"></i>';
+                    break;
+                case 'minuman':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-yellow-50', 'to-amber-50');
+                    imageElement.innerHTML = '<i class="fas fa-wine-bottle text-yellow-500 text-7xl"></i>';
+                    break;
+                default:
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-box text-blue-500 text-7xl"></i>';
+            }
+        }
 
         // Close product detail
         closeProductDetail.addEventListener('click', () => {
@@ -875,7 +961,7 @@
             }
         });
 
-        // Cart functionality
+        // Cart functionality - PERBAIKAN UTAMA: Event listener untuk semua elemen keranjang
         const cartIcons = document.querySelectorAll('.cart-icon');
         const cartSidebar = document.getElementById('cart-sidebar');
         const cartOverlay = document.getElementById('cart-overlay');
@@ -887,10 +973,10 @@
 
         let cart = [];
 
-        // Open cart
+        // Open cart - PERBAIKAN: Event listener untuk semua ikon keranjang (desktop & mobile)
         cartIcons.forEach(icon => {
             icon.addEventListener('click', (e) => {
-                e.stopPropagation();
+                e.stopPropagation(); // Mencegah event bubbling
                 cartSidebar.classList.remove('-right-96');
                 cartSidebar.classList.add('right-0');
                 cartOverlay.classList.remove('hidden');
@@ -1034,7 +1120,7 @@
                 cartItem.className = 'cart-item flex items-center mb-4 pb-4 border-b border-slate-200';
                 cartItem.innerHTML = `
                     <div class="cart-item-img w-14 h-14 rounded bg-slate-100 flex items-center justify-center mr-4">
-                        <img src="image/${item.image}" alt="${item.name}" class="cart-item-image">
+                        <i class="fas fa-box text-slate-500"></i>
                     </div>
                     <div class="cart-item-details flex-1">
                         <div class="cart-item-title font-semibold mb-1 text-slate-800">${item.name}</div>
@@ -1056,7 +1142,7 @@
                 <span>Rp ${total.toLocaleString('id-ID')}</span>
             `;
             
-            // Update semua indikator jumlah keranjang
+            // PERBAIKAN: Update semua indikator jumlah keranjang
             cartCounts.forEach(count => {
                 count.textContent = itemCount;
             });

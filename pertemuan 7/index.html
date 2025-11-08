@@ -74,6 +74,7 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* Perbaikan untuk tombol keranjang di mobile */
         .cart-icon {
             z-index: 60;
             position: relative;
@@ -83,27 +84,6 @@
                 padding: 8px;
                 margin-right: 8px;
             }
-        }
-        .hero-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .product-image {
-            width: 100%;
-            height: 128px;
-            object-fit: contain;
-            border-radius: 0.5rem;
-        }
-        .product-detail-image {
-            width: 100%;
-            height: 256px;
-            object-fit: contain;
-            border-radius: 0.5rem;
-        }
-        .cart-item-image {
-            width: 56px;
-            height: 56px;
-            object-fit: contain;
-            border-radius: 0.375rem;
         }
     </style>
 </head>
@@ -156,292 +136,187 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg text-white py-20">
+    <section class="bg-gradient-to-r from-slate-900/70 to-blue-900/70 bg-cover bg-center bg-no-repeat bg-[url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] text-white py-20">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-bounce-in">Selamat Datang di Toko Sembako Anti</h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-90">Tempat terpercaya untuk semua kebutuhan rumah tangga Anda dengan harga terjangkau dan kualitas terbaik</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="produk.html" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
-                        <i class="fas fa-shopping-bag mr-2"></i>Belanja Sekarang
-                    </a>
-                    <a href="#produk-populer" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/30 transition-all duration-300 transform hover:-translate-y-1">
-                        <i class="fas fa-star mr-2"></i>Produk Populer
-                    </a>
+            <div class="max-w-2xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Belanja Kebutuhan Harian Lebih Mudah</h1>
+                <p class="text-xl mb-8">Produk berkualitas dengan harga terjangkau untuk keluarga Indonesia. Kami menyediakan berbagai macam produk sembako dengan kualitas terbaik.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="produk.html" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/40 hover:-translate-y-1 transition-all duration-300 text-center">Lihat Produk</a>
+                    <a href="kontak.html" class="bg-white text-slate-800 px-8 py-3 rounded-full font-semibold hover:bg-slate-100 transition text-center">Hubungi Kami</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-16 bg-white">
+    <!-- About Section -->
+    <section class="bg-white py-20">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Mengapa Memilih Kami?</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Kami berkomitmen memberikan pelayanan terbaik dengan produk berkualitas untuk kepuasan pelanggan</p>
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">Mengapa Memilih Kami?</h2>
+                <p class="text-slate-600 text-lg">Kami berkomitmen untuk memberikan pelayanan terbaik dengan produk berkualitas dan harga yang terjangkau.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="text-center p-6 rounded-lg bg-blue-50 border border-blue-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Kualitas Terjamin</h3>
+                    <p class="text-slate-600">Produk dengan kualitas terbaik langsung dari distributor resmi.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-cyan-50 border border-cyan-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-tags text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-slate-800 mb-2">Harga Terjangkau</h3>
-                    <p class="text-slate-600">Harga kompetitif dengan kualitas terjamin untuk semua produk</p>
+                    <p class="text-slate-600">Harga kompetitif dengan kualitas yang tidak perlu diragukan.</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-award text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Kualitas Terbaik</h3>
-                    <p class="text-slate-600">Produk segar dan berkualitas tinggi langsung dari supplier terpercaya</p>
-                </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="text-center p-6 rounded-lg bg-indigo-50 border border-indigo-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-shipping-fast text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Pelayanan Cepat</h3>
-                    <p class="text-slate-600">Proses pembelian mudah dan pengiriman cepat ke seluruh wilayah</p>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Pengiriman Cepat</h3>
+                    <p class="text-slate-600">Pesanan Anda akan diproses dan dikirim dengan cepat.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Popular Products Section -->
-    <section class="py-16 bg-slate-50" id="produk-populer">
+    <!-- Products Preview Section -->
+    <section class="bg-slate-50 py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Produk Populer</h2>
-                <p class="text-lg text-slate-600">Produk terlaris dengan kualitas terbaik dari toko kami</p>
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">Produk Unggulan</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Beberapa produk terbaik kami. Lihat semua produk di halaman produk.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Product 1 -->
-                <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Indomie" data-price="3000" data-category="mie" data-image="indomie.jpg">
-                    <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="image/indomie.jpeg" alt="Indomie" class="product-image">
+
+            <!-- Shampo -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Shampo</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Rejoice" data-price="10000" data-category="shampo">
+                        <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-pump-soap text-blue-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Rejoice</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
                     </div>
-                    <h4 class="font-semibold text-lg text-slate-800">Indomie</h4>
-                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 3.000</div>
-                </div>
-                <!-- Product 2 -->
-                <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Kopi Uang Emas" data-price="15000" data-category="kopi" data-image="kopi-uang-emas.jpg">
-                    <div class="h-32 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="image/uang emas.jpeg" alt="Kopi Uang Emas" class="product-image">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Sunsilk" data-price="10000" data-category="shampo">
+                        <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-pump-soap text-cyan-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Sunsilk</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
                     </div>
-                    <h4 class="font-semibold text-lg text-slate-800">Kopi Uang Emas</h4>
-                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 15.000</div>
-                </div>
-                <!-- Product 3 -->
-                <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Minyak Kita 2 Liter" data-price="38000" data-category="minyak" data-image="minyak-kita.jpg">
-                    <div class="h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="image/minyak kita.jpeg" alt="Minyak Kita 2 Liter" class="product-image">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Head & Shoulders" data-price="10000" data-category="shampo">
+                        <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-pump-soap text-indigo-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Head & Shoulders</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 10.000</div>
                     </div>
-                    <h4 class="font-semibold text-lg text-slate-800">Minyak Kita 2 Liter</h4>
-                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 38.000</div>
-                </div>
-                <!-- Product 4 -->
-                <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Teh Pucuk" data-price="5000" data-category="minuman" data-image="teh-pucuk.jpg">
-                    <div class="h-32 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="image/teh pucuk.jpeg" alt="Teh Pucuk" class="product-image">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lifebuoy" data-price="5000" data-category="shampo">
+                        <div class="h-32 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-pump-soap text-sky-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Lifebuoy</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                     </div>
-                    <h4 class="font-semibold text-lg text-slate-800">Teh Pucuk</h4>
-                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
                 </div>
             </div>
+
+            <!-- Sabun Mandi -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-slate-800 text-center mb-8 relative after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-indigo-600 after:-bottom-2 after:left-1/4 after:rounded">Sabun Mandi</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Nuvo" data-price="4000" data-category="sabun">
+                        <div class="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-soap text-blue-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Nuvo</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 4.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Shinzui" data-price="5000" data-category="sabun">
+                        <div class="h-32 bg-gradient-to-br from-cyan-50 to-sky-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-soap text-cyan-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Shinzui</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Giv" data-price="5000" data-category="sabun">
+                        <div class="h-32 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-soap text-indigo-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Giv</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-sm p-6 border border-slate-100 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-product="Lervia" data-price="5000" data-category="sabun">
+                        <div class="h-32 bg-gradient-to-br from-violet-50 to-purple-50 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-soap text-violet-500 text-5xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800">Lervia</h4>
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mt-2">Rp 5.000</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="text-center mt-8">
-                <a href="produk.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    Lihat Semua Produk
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+                <a href="produk.html" class="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/40 hover:-translate-y-1 transition-all duration-300">Lihat Semua Produk</a>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="py-16 bg-white">
+    <!-- Testimonials Section -->
+    <section class="bg-white py-20">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Kategori Produk</h2>
-                <p class="text-lg text-slate-600">Temukan berbagai kategori produk kebutuhan sehari-hari</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <a href="produk.html#shampo" class="category-card bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-transparent hover:border-blue-200">
-                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-pump-soap text-white text-xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-slate-800">Shampo & Perawatan</h3>
-                </a>
-                <a href="produk.html#sabun" class="category-card bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-transparent hover:border-green-200">
-                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-soap text-white text-xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-slate-800">Sabun Mandi</h3>
-                </a>
-                <a href="produk.html#bumbu" class="category-card bg-gradient-to-br from-amber-50 to-orange-100 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-transparent hover:border-amber-200">
-                    <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-mortar-pestle text-white text-xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-slate-800">Bumbu Dapur</h3>
-                </a>
-                <a href="produk.html#minuman" class="category-card bg-gradient-to-br from-purple-50 to-pink-100 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-transparent hover:border-purple-200">
-                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-wine-bottle text-white text-xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-slate-800">Minuman</h3>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Section -->
-    <section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Apa Kata Pelanggan?</h2>
-                <p class="text-lg text-slate-600">Testimoni dari pelanggan setia Toko Sembako Anti</p>
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">Apa Kata Pelanggan Kami?</h2>
+                <p class="text-slate-600 text-lg">Kepuasan pelanggan adalah prioritas utama kami.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-semibold mr-4">
-                            AS
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-slate-800">Ahmad Surya</h4>
-                            <div class="flex text-amber-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
+                <div class="text-center p-6 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user text-white text-2xl"></i>
                     </div>
-                    <p class="text-slate-600">"Produk lengkap dan harga terjangkau. Pelayanan ramah dan cepat. Recommended banget!"</p>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Budi Santoso</h3>
+                    <p class="text-slate-600">"Produknya lengkap dan harganya terjangkau. Pelayanannya juga ramah dan cepat."</p>
                 </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-semibold mr-4">
-                            DI
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-slate-800">Dewi Indah</h4>
-                            <div class="flex text-amber-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
+                <div class="text-center p-6 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user text-white text-2xl"></i>
                     </div>
-                    <p class="text-slate-600">"Barang selalu fresh dan berkualitas. Toko langganan keluarga saya sejak 2 tahun lalu."</p>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Sari Indah</h3>
+                    <p class="text-slate-600">"Selalu belanja di sini untuk kebutuhan sehari-hari. Kualitas produk terjamin dan segar."</p>
                 </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-semibold mr-4">
-                            RS
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-slate-800">Rudi Santoso</h4>
-                            <div class="flex text-amber-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
+                <div class="text-center p-6 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user text-white text-2xl"></i>
                     </div>
-                    <p class="text-slate-600">"Harga kompetitif dan pelayanan memuaskan. Proses belanja mudah dan cepat."</p>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Ahmad Rizki</h3>
+                    <p class="text-slate-600">"Pengiriman cepat dan produk sampai dalam kondisi baik. Recommended banget!"</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Siap Memenuhi Kebutuhan Harian Anda?</h2>
-            <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">Dapatkan produk berkualitas dengan harga terbaik hanya di Toko Sembako Anti</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="produk.html" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
-                    <i class="fas fa-shopping-cart mr-2"></i>Mulai Belanja
-                </a>
-                <a href="https://wa.me/6282213253954" class="bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
-                    <i class="fab fa-whatsapp mr-2"></i>Chat via WhatsApp
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-slate-800 to-blue-900 text-white py-12">
+    <footer class="bg-gradient-to-br from-slate-800 to-blue-900 text-white py-8">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
                             <i class="fas fa-store text-white"></i>
                         </div>
                         <div>
                             <p class="text-lg font-semibold">Toko Sembako Anti</p>
+                            <p class="text-sm text-slate-300">Melayani dengan hati, menyediakan kebutuhan rumah tangga Anda</p>
                         </div>
                     </div>
-                    <p class="text-slate-300 mb-4">Melayani dengan hati, menyediakan kebutuhan rumah tangga Anda dengan kualitas terbaik dan harga terjangkau.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center hover:bg-pink-500 transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-slate-300 hover:text-white transition">Beranda</a></li>
-                        <li><a href="produk.html" class="text-slate-300 hover:text-white transition">Produk</a></li>
-                        <li><a href="tentang.html" class="text-slate-300 hover:text-white transition">Tentang Kami</a></li>
-                        <li><a href="kontak.html" class="text-slate-300 hover:text-white transition">Kontak</a></li>
-                    </ul>
+                <div class="text-center md:text-right">
+                    <p class="text-sm text-slate-300">&copy; 2025 Toko Anti. All rights reserved.</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Kategori</h3>
-                    <ul class="space-y-2">
-                        <li><a href="produk.html#shampo" class="text-slate-300 hover:text-white transition">Shampo & Perawatan</a></li>
-                        <li><a href="produk.html#sabun" class="text-slate-300 hover:text-white transition">Sabun Mandi</a></li>
-                        <li><a href="produk.html#bumbu" class="text-slate-300 hover:text-white transition">Bumbu Dapur</a></li>
-                        <li><a href="produk.html#minuman" class="text-slate-300 hover:text-white transition">Minuman</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-map-marker-alt text-blue-400"></i>
-                            <span class="text-slate-300">Jl. Teppo Batu, Kec. Pammana, Kab. Wajo</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-phone text-blue-400"></i>
-                            <span class="text-slate-300">+62 822-1325-3954</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-envelope text-blue-400"></i>
-                            <span class="text-slate-300">SunarthiAnti@gmail.com</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fas fa-clock text-blue-400"></i>
-                            <span class="text-slate-300">Buka Setiap Hari 08:00 - 21:00</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-700 mt-8 pt-8 text-center">
-                <p class="text-slate-400">&copy; 2025 Toko Sembako Anti. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -455,7 +330,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex items-center justify-center">
                     <div class="h-64 w-64 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg flex items-center justify-center" id="product-image">
-                        <img src="" alt="" class="product-detail-image" id="product-detail-img">
+                        <i class="fas fa-pump-soap text-blue-500 text-7xl"></i>
                     </div>
                 </div>
                 <div>
@@ -520,7 +395,7 @@
         const productName = document.getElementById('product-name');
         const productPrice = document.getElementById('product-price');
         const productDescription = document.getElementById('product-description');
-        const productImage = document.getElementById('product-detail-img');
+        const productImage = document.getElementById('product-image');
         const productQuantity = document.getElementById('product-quantity');
         const decreaseQuantity = document.getElementById('decrease-quantity');
         const increaseQuantity = document.getElementById('increase-quantity');
@@ -536,16 +411,14 @@
                 const product = card.getAttribute('data-product');
                 const price = card.getAttribute('data-price');
                 const category = card.getAttribute('data-category');
-                const image = card.getAttribute('data-image');
                 
                 // Set product details
                 productName.textContent = product;
                 productPrice.textContent = `Rp ${parseInt(price).toLocaleString('id-ID')}`;
                 productDescription.textContent = `Deskripsi untuk ${product}. Produk berkualitas dengan harga terjangkau.`;
                 
-                // Update product image
-                productImage.src = `image/${image}`;
-                productImage.alt = product;
+                // Update product image based on category
+                updateProductImage(category, productImage);
                 
                 // Reset quantity
                 quantity = 1;
@@ -556,8 +429,7 @@
                     name: product,
                     price: parseInt(price),
                     quantity: quantity,
-                    category: category,
-                    image: image
+                    category: category
                 };
                 
                 // Show product detail with animation
@@ -568,6 +440,63 @@
                 }, 10);
             });
         });
+
+        // Update product image based on category
+        function updateProductImage(category, imageElement) {
+            // Clear existing classes
+            imageElement.className = 'h-64 w-64 rounded-lg flex items-center justify-center';
+            
+            // Set gradient and icon based on category
+            switch(category) {
+                case 'shampo':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-pump-soap text-blue-500 text-7xl"></i>';
+                    break;
+                case 'sabun':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-cyan-50');
+                    imageElement.innerHTML = '<i class="fas fa-soap text-blue-500 text-7xl"></i>';
+                    break;
+                case 'sabun-cuci':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-cyan-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-pump-soap text-cyan-500 text-7xl"></i>';
+                    break;
+                case 'obat-nyamuk':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-bug text-blue-500 text-7xl"></i>';
+                    break;
+                case 'bumbu':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-cyan-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-mortar-pestle text-cyan-500 text-7xl"></i>';
+                    break;
+                case 'kopi':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-amber-50', 'to-yellow-50');
+                    imageElement.innerHTML = '<i class="fas fa-coffee text-amber-500 text-7xl"></i>';
+                    break;
+                case 'biskuit':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-indigo-50', 'to-purple-50');
+                    imageElement.innerHTML = '<i class="fas fa-cookie text-indigo-500 text-7xl"></i>';
+                    break;
+                case 'permen':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-amber-50', 'to-yellow-50');
+                    imageElement.innerHTML = '<i class="fas fa-candy text-amber-500 text-7xl"></i>';
+                    break;
+                case 'mie':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-utensils text-blue-500 text-7xl"></i>';
+                    break;
+                case 'minyak':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-cyan-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-oil-can text-cyan-500 text-7xl"></i>';
+                    break;
+                case 'rokok':
+                    imageElement.classList.add('bg-gradient-to-br', 'from-slate-50', 'to-blue-50');
+                    imageElement.innerHTML = '<i class="fas fa-smoking text-slate-500 text-7xl"></i>';
+                    break;
+                default:
+                    imageElement.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-indigo-50');
+                    imageElement.innerHTML = '<i class="fas fa-box text-blue-500 text-7xl"></i>';
+            }
+        }
 
         // Close product detail
         closeProductDetail.addEventListener('click', () => {
@@ -597,7 +526,7 @@
             }
         });
 
-        // Cart functionality
+        // Cart functionality - PERBAIKAN UTAMA: Event listener untuk semua elemen keranjang
         const cartIcons = document.querySelectorAll('.cart-icon');
         const cartSidebar = document.getElementById('cart-sidebar');
         const cartOverlay = document.getElementById('cart-overlay');
@@ -609,10 +538,10 @@
 
         let cart = [];
 
-        // Open cart
+        // Open cart - PERBAIKAN: Event listener untuk semua ikon keranjang (desktop & mobile)
         cartIcons.forEach(icon => {
             icon.addEventListener('click', (e) => {
-                e.stopPropagation();
+                e.stopPropagation(); // Mencegah event bubbling
                 cartSidebar.classList.remove('-right-96');
                 cartSidebar.classList.add('right-0');
                 cartOverlay.classList.remove('hidden');
@@ -756,7 +685,7 @@
                 cartItem.className = 'cart-item flex items-center mb-4 pb-4 border-b border-slate-200';
                 cartItem.innerHTML = `
                     <div class="cart-item-img w-14 h-14 rounded bg-slate-100 flex items-center justify-center mr-4">
-                        <img src="image/${item.image}" alt="${item.name}" class="cart-item-image">
+                        <i class="fas fa-box text-slate-500"></i>
                     </div>
                     <div class="cart-item-details flex-1">
                         <div class="cart-item-title font-semibold mb-1 text-slate-800">${item.name}</div>
@@ -778,7 +707,7 @@
                 <span>Rp ${total.toLocaleString('id-ID')}</span>
             `;
             
-            // Update semua indikator jumlah keranjang
+            // PERBAIKAN: Update semua indikator jumlah keranjang
             cartCounts.forEach(count => {
                 count.textContent = itemCount;
             });
